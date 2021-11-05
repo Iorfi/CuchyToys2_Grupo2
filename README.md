@@ -60,3 +60,7 @@ Sitios de referencia:
 
 Task Manager
     https://trello.com/b/YHy9UirE/grupo2cuchitoys
+
+
+Diagrama Data Base
+    https://app.diagrams.net/#G1Wb9668SfEOnLTCirBODbGeklAmhulIbL
