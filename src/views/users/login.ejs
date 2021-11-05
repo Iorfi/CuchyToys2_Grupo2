@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title> Login</title>
+    <%- include ("../partials/head") %>
+</head>
+<body>
+
+    <%- include ("../partials/header") %>
+
+    <main class="login">
+        <form action="/users/login" method="POST"><!--inicio el formulario-->
+            <div class="contenedorForm"><!--contenedor con toda la informacion del formulario-->
+
+                <h1 class="contenedorFormA">Iniciá sesión</h1><!--contenedor del titulo-->
+
+                <div class="contenedorFormB"><!--contenedor donde se introduce el mail del usuario-->
+                    <label class="contFormEmail" for="Email">Email</label>
+                    <input type="email" id="Email" name="email">
+                </div>
+
+                <% if (locals.errors && errors.email) { %>
+                <div class="text-Danger"><%= errors.email.msg %> </div>
+                <% } %>
+                <div class="contenedorFormC"><!--contenedor donde se introduce la contraseña del usuario-->
+                    <label class="contFormContra" for="contraseña">Contraseña</label>
+                    <input type="password" id="contraseña" name="password"   >
+                    <div class="perdiContra"><a href="">Olvide mi contraseña</a></div><!--link por si perdio la contraseña-->
+                </div>
+
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-Danger"><%= errors.password.msg %> </div>
+                    <% } %>
+            
+                <div class="contenedorFormD"><!--boton que permite enviar la informacion introducida en el formulario-->
+                    <button class="iniciarSesion" type="submit" >Iniciar sesión</button>
+                    <div class="crearCuenta">¿Aun no tenés cuenta?<a href="/users/registro">Crear cuenta</a></div><!--link a la pagina de registro si todavia no tiene una cuenta-->
+                </div>
+                
+            </div>
+        </form>
+    </main>
+
+    <%- include ("../partials/footer") %>
+
+</body>
+</html>  

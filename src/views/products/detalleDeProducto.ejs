@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title> Detalle de Producto</title>
+    <%- include ("../partials/head") %>
+</head>
+<body>
+
+    <%- include ("../partials/header") %>
+
+    <main class="detalleDeProducto">
+
+        <div class="categoria">
+            <a href="/">inicio</a> > <a href="">sub categoria</a> > <a href=""> sub categoriax2</a> 
+        </div>
+        <div class="cotenedorMain">
+                <img class="imagenProducto" src="/images/products/<%-products[idProducto -1].image %>" >
+            <div class="info">
+             <h1> <%- products[idProducto -1].name %></h1> 
+
+        <div class="precio"> $ <%-products[idProducto -1].price %> </div>
+
+        <div class="contenedorCarritoYboton">
+        <div class="sumarCarrito"> 
+                <div class= "contMainBBBA"> <a href=""> <h2> - </h2> </a> </div>
+                <div class= "contMainBBBB"> <a href=""> <h2> 1 </h2> </a> </div>
+                <div class= "contMainBBBC"> <a href=""> <h2> + </h2> </a> </div>
+            </div>
+            <button class="botonCarrito" type="submit"> Sumar al carrito </button>
+        </div>
+            <div class="metodoDePago">
+                <div class="cont1">Metodo de pago</div>
+                    <div class="cont2">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png" class="tarjetas" alt="visa">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png" class="tarjetas" alt="mastercard">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png" class="tarjetas" alt="amex">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/diners@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/diners@2x.png" class="tarjetas" alt="diners">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banelco@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banelco@2x.png" class="tarjetas" alt="ar_banelco">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cabal@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cabal@2x.png" class="tarjetas" alt="ar_cabal">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-naranja@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-naranja@2x.png" class="tarjetas" alt="ar_tarjeta-naranja">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-shopping@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-shopping@2x.png" class="tarjetas" alt="ar_tarjeta-shopping">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png" class="tarjetas"alt="mercadopago">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/argencard@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/argencard@2x.png" class="tarjetas" alt="ar_argencard">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/nativa@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/nativa@2x.png" class="tarjetas" alt="nativa">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cencosud@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cencosud@2x.png" class="tarjetas" alt="ar_cencosud">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png" class="tarjetas" alt="pagofacil">
+                        <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png" data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png" class="tarjetas" alt="rapipago">
+                    </div>
+            </div>
+            <div class="LocalPublico">
+                
+                <div class="contenedorLocalA" > <img src= "/images/icono-tienda.png" id="contL"></img> Local al publico</div>
+                <div class="direccion1"> Av. Rivadavia 5952</div>
+            </div>
+        
+                <div class="detalleProducto"> Descripcion del producto: <br>  <br> <%-products[idProducto -1].description%> </div>  
+
+                <div class="botones"> 
+                    <a href="../../admin/formularioEdicion/<%= products[idProducto -1].id %>" class="botonesA"> EDITAR </a>
+                    <form class="botonesB" action= "/products/detalleDeProducto/<%= products[idProducto -1].id %>?_method=DELETE" method = "POST"> 
+                        <button type="submit">Eliminar</button>
+                     </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <%- include ("../partials/footer") %>
+
+</body>
+</html> 

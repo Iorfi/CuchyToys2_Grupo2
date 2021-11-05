@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Carrito de compras </title>
+    <%- include ("../partials/head") %>
+</head>
+    <body>
+
+    <%- include ("../partials/header") %>
+
+  <main class="carritoDeCompra">
+<div class="contenedorMain">  <!-- Contenedor padre del Main-->
+
+    <div class= "contMainA"> <h2> Carrito de Compras </h2> </div> <!-- Contenedor del "Elegi" del Main-->
+    <div class="contMain-lineaHorizontal"></div><!-- linea divisoria-->
+    <article class="contMainB">   <!-- Contenedor del article (producto) del Main-->
+        <div class= "contMainBA"> <!-- Contenedor de la foto del producto del article-->
+            <img src= "/images/users/ejemploJuguete1.jpg">
+        </div>
+        <div class= "contMainBB"> <!-- Contenedor del Nombre y contador del article-->
+            <div class="contMainBBA"> <a href=""> <h2> Caballo de madera que se amaca </h2> </a> </div> <!--  Nombre  del producto-->
+            <div class="contMainBBB"> <!--  Contenedor del contador del article-->
+                <div class= "contMainBBBA"> <a href=""> <h2> - </h2> </a> </div>
+                <div class= "contMainBBBB"> <a href=""> <h2> 1 </h2> </a> </div>
+                <div class= "contMainBBBC"> <a href=""> <h2> + </h2> </a> </div>
+            </div>
+        </div>
+            <div class= "contMainBC"> <!--  Contenedor del tacho y precio-->
+                <div class= "contMainBCA"> <a> <img src = "/images/users/icono-basura.png"></a> </div>
+                <div class= "contMainBCB"> $1.599</div>
+            </div>
+
+    </article> <!-- Es un ejemplo, la estructura es la misma que la de arriba, tambien las referencias, mirar el de arriba para entender-->
+
+    <article class="contMainB">
+        <div class= "contMainBA">  
+            <img src= "/images/users/ejemploJuguete2.jpg">
+        </div>
+        <div class= "contMainBB">
+            <div class="contMainBBA"> <a href=""> <h2> Rompecabezas para armar </h2> </a> </div>
+            <div class="contMainBBB"> 
+                <div class= "contMainBBBA"> <a href=""> <h2> - </h2> </a> </div>
+                <div class= "contMainBBBB"> <a href=""> <h2> 1 </h2> </a> </div>
+                <div class= "contMainBBBC"> <a href=""> <h2> + </h2> </a> </div>
+            </div>
+        </div>
+            <div class= "contMainBC">
+                <div class= "contMainBCA"> <a> <img src = "/images/users/icono-basura.png"></a> </div>
+                <div class= "contMainBCB"> $3.599</div>
+            </div>
+
+    </article>
+
+    <div class="contMain-lineaHorizontal2"></div><!-- linea divisoria-->
+    <div class = "contMainC"> <!--  Contenedor del Formato de Envio-->
+
+        <h2  class = "contMainCA" >Formato de envío:</h2> 
+
+        <form action="" method="POST" class = "contMainCB"> 
+            <div class = "contMainCBA"> <!--  Contenedor de la pregunta para elegir-->
+            <label  class = "contMainCBAA"> <input type="radio" name = "formatoEnvio"> Envío a domicilio  </label>
+            <label  class = "contMainCBAB"><input type="radio" name = "formatoEnvio">  Retiro en el local  </label>
+        </div>
+            <label class = "contMainCBB" >Ingresá tu código postal: <input class = "contMainCBC"type="number" name="codigoPostal" placeholder="1234">             <button type="submit" name="Enviar">Calcular monto</button></label>   
+        </form>
+    </div>
+
+    <div class="contMain-lineaHorizontal2"></div><!-- linea divisoria-->
+
+    <div class = "contMainD"> <!--  Contenedor de la parte final-->
+        <div class = "contMainDA"> <!--  Contenedor de los textos de la izquierda-->
+            <p class = "contMainDAA"> El monto del envío: </p>
+            <h2  class = "contMainDAB" >Total:</h2>
+        </div>
+        <div class = "contMainDB"> <!--  Contenedor de los textos de la derecha-->
+            <p  class = "contMainDBA"> $599 </p>
+            <h2  class = "contMainDBB" >$5697</h2>
+        </div>
+    </div>
+    <div class="contMain-lineaHorizontal2"></div><!-- linea divisoria-->
+    <div  class = "contMainE"> <!--  Contenedor del continuar-->
+        <div  class = "contMainEA"> 
+        <a href = ""  ><h2> Continuar</h2></a>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+  </main>
+
+  <%- include ("../partials/footer") %>
+
+</body>
+</html> 

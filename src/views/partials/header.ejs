@@ -1,0 +1,67 @@
+<header>
+
+    <div class="banner">  <!-- Banner de arriba de todo, por ahora estatico, cuando sepamos cómo aplicarle JS va a ser dinámico-->
+        <h2>Envios a todo el País - Envíos en Caba en el día - 10 % OFF en Efectivo </h2>
+    </div>
+    <div class="contenedorHeader"> <!-- Contenedor de todo lo que se encuentra en el Header-->
+
+        <div class="contHeaderA"> <!-- Contenedor del logo-->
+            <a href = "/"> <img src="/images/users/CT Logo.png" width= "105px"> </a> 
+        </div>
+
+        <div class="contHeaderB"> <!-- Contenedor de la barra de búsqueda-->
+            
+            <form action="/my-handling-form-page" method="post">
+
+            <div class="barraBusqueda">
+                <button type="submit" style="float: right;" class = "logoBusqueda" > <i class="fas fa-search"  ></i> </button>
+                <label for="buscado"></label>
+                <input class = "inputBusqueda" type="textarea" id="buscado" name="textoBuscado" size = 65% placeholder = "¿Qué estás buscando?" >
+            </div>
+
+             </form> </div>
+
+        <div class="contHeaderC"> <!-- Contenedor del logo del carrito-->
+            <a href= "/products/carritoDeCompras" > <img  src="/images/users/icono-carrito.png" width= "40px" ></a> 
+        </div>
+    <% if(locals.isLogged){%>
+
+
+        <div class="contHeaderDloged"> <!-- Contenedor del logo del perfil-->
+
+
+            <div class="contHeaderDlogedA">
+
+            <a href = "/users/perfil"> <img  src="/images/users/<%=locals.userLogged.avatar%>" width= "40px" ></a> 
+            <div class="contHeaderDlogedNombre"><%=locals.userLogged.first_name%></div>
+
+            </div>
+
+            <div class="contHeaderDlogedB"><a href = "/users/logout"> <img  src="/images/users/icono-logout.png" width= "40px" ></a> </div>
+         </div>
+
+
+     <% } else{%>  
+        <div class="contHeaderD"> <!-- Contenedor del logo del perfil-->
+            <a href = "/users/login"> <img  src="/images/users/icono-perfil.png" width= "40px" ></a> 
+         </div>
+        <%  }%>
+    </div>
+    <div class = "lineaHorizontalHeader"> </div> <!-- linea que separa al nav-->
+    <nav> 
+        <div class = "contenedorNav"> <!-- Contenedor de todo el nav-->
+            <div class = "circuloSeparadorA"> </div> 
+            <a href = "" class = "contNavA"> <h4> Quienes somos </h4> </a>
+            <div class = "circuloSeparadorA"> </div>
+            <a href = "/products/categoriasDeJuguetes" class = "contrNavA"> <h4> Juguetes </h4> </a>
+            <div class = "circuloSeparadorA"> </div>
+            <a href = "/users/comoComprar" class = "contNavB"> <h4> Cómo Comprar </h4> </a>
+            <div class = "circuloSeparadorB"> </div>
+            <a href = "" class = "contNavB"> <h4> Contacto </h4> </a>
+            <div class = "circuloSeparadorB"> </div>
+            <a href = "/users/preguntasFrecuentes" class = "contNavB"> <h4> Preguntas Frencuentes </h4> </a>
+            <div class = "circuloSeparadorB"> </div>
+        </div>
+    </nav>
+    <div class = "lineaHorizontalHeader"> </div>  <!-- linea que separa al nav-->
+</header>

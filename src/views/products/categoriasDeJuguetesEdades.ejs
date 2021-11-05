@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title> Categorías de juguetes </title>
+    <%- include ("../partials/head") %>
+</head>
+<body>
+
+    <%- include ("../partials/header") %>
+
+    <main class="categoriasDeJuguetes">
+            <!-- Busqueda por destacado o precio -->
+            <div class="destacadoOprecio">
+                <select name="destacado o precio" id="destacadoOprecio">
+                    <option>Más destacado</option>
+                    <option>Menor precio</option>
+                    <option>Mayor precio</option>
+                </select>
+            </div>
+            
+            <!-- Division de Articles -->
+            <div class="main-articles"> 
+                <!-- Section Categories -->
+                <section class='subcategories'>
+                    <h3>Categorías</h3>
+                    <a class = "contNavA"></a> <h4> <li>Edades</li> </h4> </a>
+                    <a class = "contrNavA"> <h4> <li>Precio</li> </h4> </a>
+                    <a class = "contNavB"> <h4> <li>Clasificación</li> </h4> </a>
+                </section>
+                <!-- Section Articles -->
+                    <section>
+                        <div class="products">
+                                <% for (i = 0 ; i < edades.length ; i++) { %>
+                                    <article>
+                                    <img src="<%-edades[i].image%>" class="product_img">
+                                    <div class="main-article">
+                                        <i class="fas fa-truck"></i>
+                                        <p class="description"><%-edades[i].name %></p>
+                                        <p class="price">$<%-edades[i].price %></p>
+                                        <% if(edades[i].discount != null ) {%>
+                                        <p class="discount"><%-edades[i].discount %>% off</p>
+                                        <% }%>
+                                        <h4 class="description"><%-edades[i].description %></h4>
+                                    </div>
+                                    </article>
+                                <% } %>  
+                        </div>  
+                    </section>    
+            </div>
+        </main>
+
+        <%- include ("../partials/footer") %>
+</body>
+</html> 

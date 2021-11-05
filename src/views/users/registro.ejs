@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Crear cuenta - Cuchi Toys</title>
+    <%- include ("../partials/head") %>
+</head>
+<body>
+
+    <%- include ("../partials/header") %>
+
+    <main class="registro">
+
+        <h1>Crear cuenta</h1>
+
+    <div class="registroCompleto">
+
+        <form action="/users/registro" method="POST" enctype="multipart/form-data">
+        <div class="registroNombre">
+            <div class="nombre">Ingrese su nombre </div>
+            <label for="AlmacenarNombre"></label>
+            <input  type="text"
+            id="AlmacenarNombre" name="first_name" placeholder = "ej: María" 
+            class ="hola <%= locals.errors && errors.first_name ? 'isInvalid' : null %>"
+            value ="<%= locals.oldData ? oldData.first_name : null %>">
+        </div>
+
+        <% if (locals.errors && errors.first_name) { %>
+            <div class="text-danger"> 
+                <%= errors.first_name.msg %>
+            </div>
+            <% } %>
+
+        <div class="registroNombre">
+            <div class="nombre">Ingrese su pellido</div>
+            <label for="AlmacenarNombre"></label>
+            <input  type="text" id="AlmacenarNombre" name="last_name"  placeholder = "ej: Perez" 
+            class ="hola <%= locals.errors && errors.last_name ? 'isInvalid' : null %>" 
+            value ="<%= locals.oldData ? oldData.last_name : null %>" >
+        </div>
+
+        <% if (locals.errors && errors.last_name) { %>
+        <div class="text-danger"> 
+            <%= errors.last_name.msg %>
+        </div>
+        <% } %>
+
+        <div class="registroEmail">
+            <div class="email">Email</div>
+            <label for="AlmacenarEmail"></label>
+            <input type="email" id="AlmacenarEmail" name="email"  placeholder = "ej: tunombre@email.com"
+            class ="hola <%= locals.errors && errors.email ? 'isInvalid' : null %>"
+            value ="<%= locals.oldData ? oldData.email : null %>">
+        </div>
+
+        <% if (locals.errors && errors.email) { %>
+            <div class="text-danger"> 
+                <%= errors.email.msg %>
+            </div>
+            <% } %>
+        
+        <div class="registroTelefono">
+            <div class="telefono">Telefono</div>
+            <label for="AlmacenarTelefono"></label>
+            <input type="tel" id="AlmacenarTelefono" name="telefono"  placeholder = "ej: 1123445567"
+             class ="hola <%= locals.errors && errors.telefono ? 'isInvalid' : null %>"
+             value ="<%= locals.oldData ? oldData.telefono : null %>"  >
+        </div>
+
+        <% if (locals.errors && errors.telefono) { %>
+            <div class="text-danger"> 
+                <%= errors.telefono.msg %>
+            </div>
+            <% } %>
+        
+        <div class="registroContraseña">
+            <div class="contraseña">Contraseña</div>
+            <label for="AlmacenarContraseña"></label>
+            <input type="password" id="AlmacenarContraseña" name="password"  
+            class ="hola <%= locals.errors && errors.password ? 'isInvalid' : null %>"
+            value ="<%= locals.oldData ? oldData.password : null %>" >
+        </div>
+        
+        <% if (locals.errors && errors.password) { %>
+            <div class="text-danger"> 
+                <%= errors.password.msg %>
+            </div>
+            <% } %>
+
+        <div class="registroContraseñax2">
+            <div class="contraseñax2">Repetir contraseña</div>
+            <label for="AlmacenarContraseñax2"></label>
+            <input type="password" id="AlmacenarContraseñax2" name="password2" 
+             class ="hola <%= locals.errors && errors.password2 ? 'isInvalid' : null %>"
+             value ="<%= locals.oldData ? oldData.password2 : null %>">
+        </div>
+
+        <% if (locals.errors && errors.password2) { %>
+            <div class="text-danger"> 
+                <%= errors.password2.msg %>
+            </div>
+            <% } %>
+
+        <div class="registroAvatar">
+            <div class="avatar">Carga tu Avatar</div>
+            <label ></label>
+            <input type="file" id="avatar" name="avatar"  >
+            <% if (locals.errors && errors.avatar) { %>
+                <div class="text-danger"> 
+                    <%= errors.avatar.msg %>
+                </div>
+                <% } %>
+    
+        </div>
+
+        <button class="botonCuenta" type="submit" >Crear cuenta</button>      
+          
+        </form>
+        <div class="yaTenesCuenta">¿Ya tenés cuenta?<a href="/users/login">Iniciá sesión</a></div>
+        
+    </div>
+    </main>
+  
+    <%- include ("../partials/footer") %>
+
+</body>
+</html> 

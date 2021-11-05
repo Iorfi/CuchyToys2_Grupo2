@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title> Gestión de Pago</title>
+    <%- include ("../partials/head") %>
+</head>
+<body>
+
+    <%- include ("../partials/header") %>
+
+  <main class= "gestionDePago">
+      <div class= "contenedorMain">
+        <div class= "contMainA">
+            <h2> Opciones de Envio </h2> <!-- Titulo de la pagina-->
+            <div class= "lineaHorizontal"> </div> <!-- linea divisoria-->
+            <div class= "contMainAB"> <!-- contenedor de toda la direccion del usuario del main-->
+                <div class= "contMainABA"> <!-- contenedor del icono del maps del producto-->
+                    <i class="fas fa-map-marker-alt"></i>
+                 </div>
+                <div class= "contMainABB"> <!-- contenedor del medio de la caja de la direccion del main-->
+                    <h3> Dirección del usuario</h3>
+                    <p> Codigo postal, barrio, Provincia</p>
+                    <p> +54 911 12121212</p>
+                 </div>
+             </div>
+            <div class= "lineaHorizontal"> </div> <!-- linea divisoria-->
+            <h3 class= "contMainAC">paquete 1 </h3>
+            <div class= "contMainAD"> <!-- contenedor de toda la caja del producto del main-->
+                <div class= "contMainADA"> <!-- contenedor de la parte de arriba de la caja del producto del main-->
+                    <h3 class= "contMainADAA"> Llega Mañana </h3>
+                    <p class= "contMainADAB"> $599 </p>
+                 </div>
+                <div class= "lineaHorizontal2"> </div> <!-- linea divisoria-->
+                <div class= "contMainADB"> <!-- contenedor de la parte de abajo de la caja del producto del main-->
+                    <img src= "/images/ejemploJuguete1.jpg" class= "contMainADBA">
+                    <div class= "contMainADBB">
+                        <p > Caballo de madera </p>
+                        <p> Unidades: 2 </p>
+                    </div>
+                    <p class= "contMainADBC">$1599</p>
+                 </div>
+             </div>
+         </div>
+        <div class= "contMainB"> <!-- contenedor de toda la caja de la derecha del main-->
+            <h3 class= "contMainBA"> Resumen de compra </h3>
+            <div class= "lineaHorizontal2"> </div> <!-- linea divisoria-->
+            <div class= "contMainBB"> <!-- contenedor del precio final de productos y envios del main-->
+                <div class= "contMainBBA">
+                    <p> precio de Productos: </p>
+                    <p> precio de Envios: </p>
+                 </div>
+                <div class= "contMainBBB">
+                    <p> $precio </p>
+                    <p> $precio </p>
+                 </div>
+             </div>
+            <div class= "lineaHorizontal2"> </div> <!-- linea divisoria-->
+            <div class= "contMainBC"> <!-- contenedor del TOTAL del main-->
+                <p class= "contMainBCA"> TOTAL: </p>
+                <p class= "contMainBCB"> $precio </p>
+             </div>
+            <button class= "contMainBD">Continuar </button> <!-- boton de continuar-->
+      </div>
+  </main>
+
+  <%- include ("../partials/footer") %>
+
+</body>
+</html> 

@@ -1,0 +1,1524 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Diseño del text-danger*/
+
+
+/* Diseño del header*/
+
+
+/* Diseño del banner de arriba de todo*/
+.banner {
+    background-color:rgb(255, 241, 230);
+}
+.banner h2 {
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Diseño del Contenedor del Header*/
+.contenedorHeader{
+    background-color:#EDDCD2;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+}
+
+/* Diseño de Contenedores hijos del Header*/
+.contHeaderA, .contHeaderB, .contHeaderC, .contHeaderD {
+    flex-grow: 1;
+    flex-wrap: nowrap;
+}
+
+/* Diseño del Contenedor del logo del Header*/
+.contHeaderA{
+    width:12%;
+    padding: 2%;
+}
+
+/* Diseño  del logo del Header*/
+.contHeaderA img {
+    height: 50px;
+    width: 50px;
+}
+
+/* Diseño del Contenedor de la barra de búsqueda del Header*/
+.contHeaderB {
+    width: 52%;
+    align-items: center;
+    padding-left: 15px;
+    }
+
+/* Diseño de la barra de busqueda del Header*/
+.barrabusqueda {
+    display: flex;
+}
+
+/* Diseño del input del Header*/
+.inputBusqueda {
+    width: 90%;
+    border-radius: 10px;
+    border-width: 1px;
+    padding: 5px;
+    padding-left: 2px;
+}
+
+/* Diseño del Logo de busqueda del Header*/
+.logoBusqueda {
+    order: 2;
+    width: 10%;
+    padding: 5px;
+    border-radius: 10px;
+    border-width: 1px;
+    display: none;
+}
+
+/* Diseño del carrito del Header*/
+
+.contHeaderC {
+    height: 25px;
+    width: 10%;
+}
+
+.contHeaderC img {
+    height: 25px;
+    width: 25px;
+}
+
+.contHeaderDloged {
+    width: 10%;
+    display: flex;
+    color:#CB997E;
+    font-weight: bold;
+    align-items: center;
+    }
+.contHeaderDlogedA {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    text-align: center;
+    margin-top: 5px;
+    }
+.contHeaderDloged img {
+    width: 20%;
+    height: 50%;
+    border-radius: 20px;
+    } 
+.contHeaderDlogedA img {
+    width: 25px;
+    height: 25px;
+    } 
+.contHeaderDlogedB img {
+    width: 25px;
+    height: 25px;
+    }
+.contHeaderDlogedB  {
+    width: 25%;
+    height: 30%;
+    margin-left:30%;
+    }
+.contHeaderDlogedNombre {
+display: none;
+    }
+
+/* Diseño del contenedor del perfil del Header*/
+.contHeaderD {
+width: 10%;
+padding-left: 5%;
+    }
+
+
+/* Diseño del perfil del Header*/
+.contHeaderD img {
+    height: 25px;
+    width: 25px;
+}
+
+.contHeaderD p {
+    display: none;
+}
+
+.contenedorNav a{
+    text-decoration:none;
+    color:#CB997E;
+}
+
+/* Diseño del contenedor del nav del Header*/
+.contenedorNav {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color:#EDDCD2;
+    align-items: center;
+}
+
+/* opciones del nav que se ven cuando estas en 768px*/
+.contNavB {
+    display: none;
+}
+
+/* circulos que se ven cuando estas en movile*/
+.circuloSeparadorA {
+    background-color:#CB997E;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+/* circulos que se ven cuando estas en 768px*/
+.circuloSeparadorB {
+    display: none;
+}
+
+
+
+/* Linea divisoria para separar temas*/
+.lineaHorizontalHeader {
+    background: #CB997E;
+    height: 1px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/*Diseño del Footer */
+
+
+/* Diseño del contenedor padre del Footer*/
+.contenedorFooter {
+    background-color: #EDDCD2;
+    width: 100%;
+    display: flex;
+    justify-content:start;
+    flex-wrap: wrap;
+    justify-content:inherit;
+    color: #CB997E;
+}
+
+/* Diseño del contenedor del logo del Footer*/
+.contFooterA {
+    width: 100%;
+    padding-left: 30%;
+}
+
+/* Diseño del logo del Footer*/
+.contFooterA img {
+    width: 50%;
+}
+
+/* Diseño de los títulos del Footer*/
+.contFooterB h2, .contFooterC h2, .contFooterD h2, .contFooterE h2{
+    font-size: 16px;
+    padding-right: 25px;
+ }
+
+   /* Linea divisoria para separar temas*/
+.contFooter-lineaHorizontal {
+    background: #616368;
+    height: 1px;
+    width: 74%;
+    text-align: center;
+    margin-left: 13%;
+    margin-top: 15px;
+}
+
+
+/* linea vertical que aparecera en 768px*/
+.contFooter-lineaVertical {
+display: none;
+}
+
+ /* Diseño del contenedor del contacto del Footer*/
+ .contFooterB {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     padding-left: 35%;
+     padding-top: 25px;
+ }
+
+  /* Diseño del contenedor de las categorías del Footer*/
+ .contFooterC {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 35%;
+    height: 125px;
+    padding-top: 25px;
+    padding-right: 30%;
+}
+
+/* Diseño de los href del footer*/
+.contFooterC a {
+    padding-left: 10px;
+    text-decoration:none;
+    color:#CB997E;
+}
+
+ /* Diseño del contenedor de los medios de pago del Footer*/
+.contFooterD {
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 25px;
+    justify-content: space-between;
+}
+
+ /* Diseño del contenedor del medio de envio del Footer*/
+.contFooterE {
+    padding-top: 25px;
+    width: 100%;
+    padding-left: 35%;
+}
+
+ /* Diseño de las fotos de las tarjetas del Footer*/
+.tarjetas {
+    border-radius: 5px;
+    height: 25px;
+    width: 40px;
+}
+
+
+/* -----------------Cambios en el diseño a partir de 576px EN HEADER Y FOOTER, ----------------*/
+/*---------------------------------------------------------------------------------------------*/
+
+
+ /* Cambios en el diseño a partir de 576px*/
+ @media (min-width: 576px) {
+
+    /* Diseño del Contenedor del logo del Header*/
+    .contHeaderA{
+        width: 5%;
+    }
+    
+    /* Diseño del Contenedor de la barra de búsqueda del Header*/
+    .contHeaderB{
+        width: 55%;
+        padding-left: 5%;
+    }
+    
+    /* Diseño del input del Header*/
+    .logoBusqueda {
+        display: block;
+    }
+    
+    /* Diseño del input del Header*/
+    .inputBusqueda {
+    padding-left: 10px;
+    }
+    
+    /* Diseño del contenedor del perfil del Header*/
+    .contHeaderD{
+        width: 1%;
+        padding-left: 2%;
+    
+    }
+    
+    /* Diseño del contenedor padre del Footer*/
+    .contenedorFooter {
+        padding: 0px;
+    }
+    
+    /* Diseño de los títulos del Footer*/
+    .contFooterB h2, .contFooterC h2, .contFooterD h2 {
+        padding-right: 100px;
+     }
+    
+    }
+    
+    @media (min-width: 768px) {
+    
+        .contNavB {
+            display: block;
+        }
+    
+        .circuloSeparadorB {
+            background-color:#CB997E;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            display: block;
+        }
+        .contenedorNav {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+    
+     /* Diseño de los títulos del Footer*/
+    .contFooterB h2{
+        padding-right: 75%;
+     }
+    
+     .contenedorFooter {
+         justify-content: space-between;
+     }
+    
+     .contFooterA {
+        margin-bottom: 30px;
+        padding-left: 0%;
+        width: 16%;
+    }
+    
+    .contFooterA img {
+        width: 90%;
+        padding-top: 15px;
+    }
+    .contFooterB {
+        margin-bottom: 30px;
+        padding-left: 0%;
+        width: 20%;
+    }
+    .contFooterC {
+        margin-bottom: 30px;
+        padding-left: 0%;
+        width: 18%;
+        padding-right: 0px;
+    }
+     .contFooterD {
+         margin-bottom: 30px;
+         padding-left: 0%;
+         width: 18%;
+         padding-right: 2%;
+     }
+     .contFooterE {
+        margin-bottom: 30px;
+        padding-left: 0%;
+        width: 18%;
+    }
+    a.categFooter {
+        width: 90%;
+    }
+    
+      /* Al estar en horizontal se suma la linea divisoria*/
+    .contFooter-lineaVertical {
+        background: #CB997E;
+        height: 150px;
+        top: 136px;
+        width: 3px;
+        display: block;
+        border-radius: 30%;
+        margin-top: 25px;
+        margin-left: 5px;
+        margin-right: 5px;
+        }
+    
+    /* Al estar en horizontal se le quita la linea horizontal de movile*/
+    .contFooter-lineaHorizontal {
+        display: none;
+    }
+    .contFooterB h2, .contFooterE h2, .contFooterC h2, .contFooterD h2 {
+        padding-right: 0px;
+        padding-bottom: 15px;
+     }
+    
+    }
+    
+    
+    @media (min-width: 992px) {
+        
+    }
+    
+    
+    @media (min-width: 1200px) {
+    
+        .contFooterD h2 {
+            padding-right: 80px;
+        }
+    
+.contHeaderDloged {
+    width: 10%;
+    display: flex;
+    color:#CB997E;
+    font-weight: bold;
+    align-items: center;
+    }
+.contHeaderDlogedA {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    text-align: center;
+    margin-top: 5px;
+    }
+.contHeaderDloged img {
+    width: 20%;
+    height: 50%;
+    border-radius: 20px;
+    } 
+.contHeaderDlogedA img {
+    width: 30px;
+    height: 30px;
+    } 
+.contHeaderDlogedB img {
+    width: 80%;
+    }
+.contHeaderDlogedNombre {
+    display: flex;
+    }
+}
+    
+
+/*-------------------------------------  Diseño del Carrito de compra  ---------------------------------*/
+/*------------------------------------------------------------------------------------------------------*/
+
+
+/* Diseño del contenedor padre del Main*/
+.carritoDeCompra .contenedorMain {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF1E6;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Diseño del titulo del Main*/
+.carritoDeCompra .contMainA h2{
+    font-family: unset;
+    padding-top: 10px;
+    margin-left: 6%;
+
+}
+
+  /* Linea divisoria para separar temas*/
+  .carritoDeCompra .contMain-lineaHorizontal {
+    background: #616368;
+    height: 1px;
+    width: 86%;
+    text-align: center;
+    margin-left: 6%;
+}
+
+/* Diseño del article (producto) del Main*/
+.carritoDeCompra .contMainB {
+    display: flex;
+    background-color: #DDBEA9;
+    flex-wrap: nowrap;
+    width: 86%;
+    margin-left: 6%;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+/* Diseño de la foto del producto del article del Main*/
+.carritoDeCompra .contMainBA {
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+}
+.carritoDeCompra .contMainBA img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+/* Diseño del nombre y contador del producto del article del Main*/
+.carritoDeCompra .contMainBB {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.carritoDeCompra .contMainBBA a,.contMainBBBA a,.contMainBBBB a,.contMainBBBC a {
+    text-decoration:none;
+    color: black;
+}
+.carritoDeCompra .contMainBBA h2 {
+    font-size: 18px;
+    font-family: unset;
+    margin-left: 10%;
+}
+.carritoDeCompra .contMainBBB {
+    display: flex;
+    border-radius: 5px;
+    width: 110px;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 10%;
+    margin-top: 20px;
+    background-color: rosybrown;
+}
+
+/* Diseño del tacho y precio del producto del article del Main*/
+.carritoDeCompra .contMainBC {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    text-align: right;
+}
+.carritoDeCompra .contMainBCA {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.carritoDeCompra .contMainBCA img {
+    height: 25px;
+    width: 25px;
+}
+.carritoDeCompra .contMainBCB {
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+/* Linea divisoria para separar temas*/
+.carritoDeCompra .contMain-lineaHorizontal2 {
+    background: #616368;
+    height: 1px;
+    width: 86%;
+    text-align: center;
+    margin-left: 6%;
+    margin-top: 25px;
+}
+
+/* Diseño del Formato de Envio del Main*/
+.carritoDeCompra .contMainC {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 86%;
+    margin-left: 6%;
+    margin-top: 10px;
+}
+.carritoDeCompra .contMainC h2 {
+    font-size: 18px;
+    font-family: unset;
+    margin-bottom: 10px;
+}
+.carritoDeCompra .contMainCB {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Diseño de la eleccion de envio del Formato de Envio del Main*/
+.carritoDeCompra .contMainCBA {
+    display: flex;
+    margin-bottom: 10px;
+}
+.carritoDeCompra .contMainCBAA {
+    width: 150px;
+}
+.carritoDeCompra .contMainCBAB {
+    width: 150px;
+}
+
+/* Diseño del codigo postal del Formato de Envio del Main*/
+.carritoDeCompra input {
+    width: 15%;
+}
+.carritoDeCompra .contMainCBB {
+    margin-left: 8px;
+}
+
+/* Diseño del total del Main*/
+.carritoDeCompra .contMainD {
+    display: flex;
+    width: 86%;
+    margin-left: 6%;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+.carritoDeCompra .contMainDB {
+    display: flex;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Diseño del continuar del Main*/
+.carritoDeCompra .contMainE {
+    flex-direction: row-reverse;
+    display: flex;
+    width: 92%;
+}
+.carritoDeCompra .contMainEA {
+    border-radius: 10px;
+    text-align: center;
+    background-color: #CB997E;
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Cambios en el diseño a partir de 576px EN MAIN*/
+
+@media (min-width: 576px) { 
+    /* Cambio para que a partir de aca las fotos no se sigan agrandando*/
+    .carritoDeCompra .contMainBA {
+        width: 100px;
+    }
+        
+    }
+    
+    @media (min-width: 768px) {
+    /* Cambio para que a partir de aca el tacho y el precio esten bien a la derecha*/
+    .carritoDeCompra .contMainBC {
+            width: 30%;
+        }
+    }
+
+/*-------------------------------------  Diseño del Detalle de Producto  -------------------------------*/
+/*------------------------------------------------------------------------------------------------------*/
+
+
+.detalleDeProducto body {
+    background-color: #FFF1E6;
+    font-family: 'Roboto', sans-serif;
+}
+.detalleDeProducto .categoria {
+    color: #DDBEA9;
+    margin-top:4vw;
+    margin-left: 6vw;
+}
+ 
+.detalleDeProducto h1{
+    color:#CB997E;
+    margin-left: 4vw;
+    font-weight: bold;
+}
+.detalleDeProducto .precio{
+    color:#CB997E;
+    margin-top:2vh;
+    margin-left: 6vw;
+    margin-bottom: 2vh;
+    font-size: 25px;
+    
+}
+.detalleDeProducto .sumarCarrito {
+    display: flex;
+    border-radius: 10px;
+    width: 110px;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top:7px;
+    padding-bottom:7px;
+    border:solid 1px;
+    border-color: #DDBEA9;
+    margin-top:15px;
+    margin-left: 4vw;
+}
+.detalleDeProducto .contMainBBBA a, .contMainBBBC a{
+    color:#CB997E;
+}
+.detalleDeProducto .contMainBBBB a{
+color:#DDBEA9;
+
+}
+.detalleDeProducto .contenedorCarritoYboton{
+    display:flex;
+}
+.detalleDeProducto .botonCarrito{
+    margin-left: 4vw;
+    width: 57vw;
+    height: 8vh;
+    border-radius: 20px;
+    margin-top:2.7vh;
+    color: white;
+    border-color: #DDBEA9;
+    background-color: #CB997E;
+    border:0;
+    transition: background-color, 0,5s;
+    font-size: 20px;
+}
+.detalleDeProducto .botonCarrito:hover{
+    background-color: #e2b399;
+}
+.detalleDeProducto .metodoDePago{
+    display:flex;
+    flex-direction: column;
+}
+.detalleDeProducto .cont1{
+    font-size: 20px;
+    margin-left: 4vw;
+    color:#CB997E;
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+}
+.detalleDeProducto .contenedorLocalA{
+    margin-left: 4vw;
+    color:#CB997E;
+    font-size: 20px;
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+    display:flex;
+    align-items: center;
+}
+.detalleDeProducto .contenedorLocalA img{
+    width: 50px;
+}
+.detalleDeProducto .direccion1{
+padding:2%;
+margin-left: 4vw;
+border-radius:10px;
+width: 90vw;
+background-color: white;
+margin-left: 0px;
+}
+.detalleDeProducto .detalleProducto{
+    margin-top: 10px;
+    padding:2%;
+    margin-left: 4vw;
+    width: 90vw;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+
+}
+.detalleDeProducto .imagenProducto{
+    width: 80%;
+    height: auto;
+}
+.detalleDeProducto #contL{
+width: 10%;
+height: auto;
+}
+
+.detalleDeProducto .botones {
+    display: flex;
+    justify-content:left;
+}
+
+.detalleDeProducto .botonesA {
+    display: flex;
+    border-radius: 5px;
+    background-color: rgb(218, 137, 76);
+    padding: 8px;
+    margin-left: 10%;
+}
+
+.detalleDeProducto .botonesB {
+    display: flex;
+    border-radius: 5px;
+    background-color: rgb(221, 96, 92);
+    padding: 8px;
+    margin-right: 10%;
+    margin-left: 5%;
+}
+
+
+@media (min-width: 768px){
+    .detalleDeProducto .cotenedorMain{
+        display:flex;
+    }
+    .detalleDeProducto .botonCarrito{
+        width: 30vw;
+    }
+    .detalleDeProducto .cont2{
+        width: 50vw;
+        margin-left: 4vw;
+    }
+   
+    .detalleDeProducto .contenedorCarritoYboton{
+        display:flex;
+        flex-direction: column;
+    }
+    .detalleDeProducto .detalleProducto,.detalleDeProducto .direccion1{
+        width: 80%;
+        margin-left: 5vw;
+    }
+    .detalleDeProducto .imagencarrucel{
+        width: 50%;
+        height: 50%;
+    }
+}
+@media (min-width: 1200px) {
+    .detalleDeProducto .imagencarrucel{
+        width: 40%;
+    }
+    .detalleDeProducto .contenedorCarritoYboton{
+        display:flex;
+        flex-direction: row;
+    }
+}
+
+
+/*-------------------------------------  Diseño del Gestion de Pago  -----------------------------------*/
+/*------------------------------------------------------------------------------------------------------*/
+
+.gestionDePago .contenedorMain {
+    background-color: #F0EFEB;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Diseño del contenedor de la caja de opciones de envio del Main*/
+.gestionDePago .contMainA{
+    margin-left: 8%;
+    margin-right: 8%;
+    display: flex;
+    flex-direction: column;
+    width: 84%;
+    background-color: #DDBEA9;
+    padding: 10px;
+}
+
+.gestionDePago .contMainA h2 {
+   font-size: 22px;
+}
+
+  /* Linea divisoria para separar temas*/
+  .gestionDePago .lineaHorizontal {
+    background: #616368;
+    height: 1px;
+    width: 95%;
+    margin-left: 5px;
+}
+
+/* Diseño de la caja de la direccion del usuario del Main*/
+.gestionDePago .contMainAB {
+    display: flex;
+    width: 95%;
+    height: 100px;
+    margin-top: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #EDDCD2;
+}
+
+/* Diseño del fondo blanco del logo de maps del Main*/
+.gestionDePago .contMainABA {
+    border-radius: 50%;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-left: 8%;
+}
+
+/* Diseño del logo de maps del Main*/
+.gestionDePago .contMainABA i{
+    position: absolute;
+    left: 13px;
+    top:12px ;
+}
+
+.gestionDePago .contMainABB {
+    padding-left: 15px;
+    padding-right: 5px;
+}
+
+/* "paquete 1" del Main*/
+.gestionDePago .contMainAC {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Diseño de la caja del producto del Main*/
+.gestionDePago .contMainAD {
+    display: flex;
+    width: 95%;
+    height: 100px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+    padding-top: 15px;
+    border-radius: 10px;
+    background-color: #EDDCD2;
+}
+
+/* Diseño de la parte de arriba de caja del producto del Main*/
+.gestionDePago .contMainADA {
+    display: flex;
+    justify-content: space-between;
+    width: 86%;
+}
+
+/* Linea divisoria para separar temas*/
+.gestionDePago .lineaHorizontal2 {
+    background: #616368;
+    height: 1px;
+    width: 95%;
+    text-align: center;
+}
+
+/* Diseño de la parte de abajo de la caja del producto del Main*/
+.gestionDePago .contMainADB {
+    display: flex;
+    width: 86%;
+    margin-top: 10px;
+}
+
+/* Diseño de la foto de al caja del producto del Main*/
+.gestionDePago .contMainADBA{
+    width: 60px;
+    border-radius: 10px;
+}
+
+/* Diseño del titulo y unidades de la caja del producto del Main*/
+.gestionDePago .contMainADBB{
+    width: 60%;
+    padding-left: 10px;
+}
+
+/* Diseño del precio de la caja del producto del Main*/
+.gestionDePago .contMainADBC{
+    margin-top: 25px;
+    padding-left: 21%;
+}
+
+
+/* Diseño de la caja de resumen de compra del Main*/
+.gestionDePago .contMainB {
+    display: flex;
+    flex-direction: column;
+    width: 84%;
+    background-color:#DDBEA9;
+    margin-top: 20px;
+    margin-left: 8%;
+    margin-right: 8%;
+    padding: 10px;
+
+}
+
+.gestionDePago .contMainBA {
+    font-size: 18px;
+}
+
+/* Diseño del cuerpo de la caja de resumen de compra del Main*/
+.gestionDePago .contMainBB, .contMainBC{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Diseño del boton la caja de resumen de compra del Main*/
+.gestionDePago .contMainBD{
+    padding: 10px;
+    align-self:center;
+    transform: background-color 600ms;
+    border-radius: 10px;
+
+}
+.gestionDePago .contMainBD:hover {
+    background-color: #CB997E;
+}
+
+@media (min-width: 992px) {
+    /* a partir de aca el resumen de compra se posiciona al lado de las opciones de envio*/
+    .gestionDePago .contenedorMain {
+        flex-direction: row;
+      }
+      .gestionDePago .contMainA {
+          width: 60%;
+          margin: 5%;
+      }
+      .gestionDePago .contMainB {
+        width: 25%;
+        margin: 5%;
+        margin-left: 0%;
+    }
+    
+    .gestionDePago .contMainBD {
+        margin-top: 50%;
+     }
+    }
+
+
+
+/*------------------------------------- Formulario de Carga  -------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------*/
+
+.formularioCarga form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color:#EDDCD2;
+    border-radius: 15px;
+    padding-left:3% ;
+    padding-right:3%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #CB997E;
+    align-items: center;
+    font-weight: bold;
+}
+
+.formularioCarga h1 {
+    padding-bottom: 20px;
+}
+
+.formularioCarga .titulos {
+    font-size: 20px;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.formularioCarga input {
+border-radius: 5px;
+border: 0,2px;
+border-color: #CB997E;
+width: 80%;
+}
+
+.formularioCarga .tituloProducto {
+    color: black;
+}
+
+.formularioCarga .contFormA {
+flex-wrap: wrap;
+display: flex;
+margin-left: 10%;
+margin-right: 10%;
+justify-content: space-between;
+width: 70%;
+}
+
+.formularioCarga .contFormA input{
+    width: 40%;
+    }
+
+.formularioCarga .contFormA label{
+    width: 40%;
+    }
+
+.formularioCarga .desc{
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.formularioCarga .publicar {
+    padding: 5px;
+    margin: 5px;
+    width: 35%;
+    border-radius: 5px;
+    transition: background-color, 0,5s;
+    background-color: #DDBEA9;
+}
+
+.formularioCarga .publicar:hover{
+background-color: #e2b399;
+}
+
+
+/* Linea divisoria para separar temas*/
+.formularioCarga .lineaHorizontal {
+    background: #CB997E;
+    height: 3px;
+    width: 90%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+@media (min-width: 992px) {
+    /* a partir de aca el resumen de compra se posiciona al lado de las opciones de envio*/
+    .formularioCarga .contFormA {
+        justify-content: space-around;
+    }
+    .formularioCarga .contFormA input{
+        width: 10%;
+        margin-right:35%;
+        margin-left: 5%;
+        }
+    
+    .formularioCarga .contFormA label{
+        width: 10%;
+        margin-left:35%;
+        margin-right: 5%;
+        }
+
+    .formularioCarga input {
+        width: 50%;
+        padding: 5px;
+        }
+
+    .formularioCarga .lineaHorizontal {
+    width: 60%;
+    height: 3px;
+    margin-bottom: 5px;
+}
+
+    }
+
+    
+/*------------------------------------- Formulario de Edicion  -------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------*/
+
+.formularioEdicion form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color:#EDDCD2;
+    border-radius: 15px;
+    padding-left:3% ;
+    padding-right:3%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #CB997E;
+    align-items: center;
+}
+
+.formularioEdicion h1 {
+    padding-bottom: 20px;
+}
+
+.formularioEdicion .titulos {
+    font-size: 20px;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.formularioEdicion input {
+border-radius: 5px;
+border: 0,2px;
+border-color: #CB997E;
+width: 80%;
+}
+
+.formularioEdicion .tituloProducto {
+    color: black;
+}
+
+.formularioEdicion .contFormA {
+flex-wrap: wrap;
+display: flex;
+margin-left: 10%;
+margin-right: 10%;
+justify-content: space-between;
+width: 70%;
+}
+
+.formularioEdicion .contFormA input{
+    width: 40%;
+    }
+
+.formularioEdicion .contFormA label{
+    width: 40%;
+    }
+
+.formularioEdicion .desc{
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.formularioEdicion .publicar {
+    padding: 5px;
+    margin: 5px;
+    width: 35%;
+    border-radius: 5px;
+    transition: background-color, 0,5s;
+    background-color: #DDBEA9;
+}
+
+.formularioEdicion .publicar:hover{
+background-color: #e2b399;
+}
+
+
+/* Linea divisoria para separar temas*/
+.formularioEdicion .lineaHorizontal {
+    background: #CB997E;
+    height: 3px;
+    width: 90%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+
+@media (min-width: 992px) {
+    /* a partir de aca el resumen de compra se posiciona al lado de las opciones de envio*/
+    .formularioEdicion .contFormA {
+        justify-content: space-around;
+    }
+    .formularioEdicion .contFormA input{
+        width: 10%;
+        margin-right:35%;
+        margin-left: 5%;
+        }
+    
+    .formularioEdicion .contFormA label{
+        width: 10%;
+        margin-left:35%;
+        margin-right: 5%;
+        }
+
+    .formularioEdicion input {
+        width: 50%;
+        padding: 5px;
+        }
+
+    .formularioEdicion .lineaHorizontal {
+    width: 60%;
+    height: 3px;
+    margin-bottom: 5px;
+}
+
+    }
+
+    /*------------------------------------- Formulario de login  -------------------------------------------*/
+    /*------------------------------------------------------------------------------------------------------*/
+    .login .contenedorForm{
+        display:flex;
+        flex-direction: column;
+        margin-top:25%;
+        margin-bottom:25%;
+        color:#CB997E;
+    }
+    .login body {
+        background-color: #FFF1E6;
+    }
+    .login #Email,.login #contraseña{
+        border-radius: 9px;
+        padding: 13px;
+        margin-top: 1vh;
+        border-color: #DDBEA9;
+        font-size: 16px;
+        width: 95%;
+    }
+    .login .contenedorFormD,.login .contenedorFormB,.login .contenedorFormC{
+        margin-top: 2vh;
+    }
+    .login .contenedorFormA{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        
+    }
+    .login .contenedorFormB{
+        display: flex;
+        flex-direction: column;
+        margin-left: 3vw;
+        width: 95vw;
+    }
+    .login .contenedorFormC{
+        display: flex;
+        flex-direction: column;
+        margin-left: 3vw;
+        width: 95vw;
+        margin-top: 3vh;
+    }
+    .login .contenedorFormD{
+        margin: auto;
+    }
+    
+    .login .contFormEmail,.login .contFormContra{
+        font-size: 15px;
+    }
+    
+    
+    .login .perdiContra{
+        text-align: right;
+        margin-top: 5px;
+    }
+    .login .iniciarSesion{
+        margin-top: 15px;
+        float: center;
+        border-radius: 20px;
+        background-color: #CB997E;
+        font-size: 20px;
+        text-align: center;
+        width: 95vw;
+        border-color: #CB997E;
+        padding:8px;
+        color: white;
+    }
+    .login .crearCuenta{
+    text-align: center;
+    margin-top: 2.5vh;
+    font-size: 18px;
+    }
+    .login .iniciarSesion:hover{
+        background-color: #DDBEA9;
+        transition: background-color, 0,5ms;
+    }
+    @media (min-width: 576px){
+        .login  .contenedorForm{
+            margin-top:7vh;
+        }
+        .login .contenedorFormA{
+            font-size: 40px;
+            margin: 2vw 2vh;
+        }
+        .login .contenedorFormB,.login .contenedorFormC{
+            width: 60vw;
+            margin:auto;
+        }
+        .login .contFormEmail,.login .contFormContra{
+            font-size: 18px;
+        }
+        .login .iniciarSesion{
+            width: 60vw;
+        }
+    }
+
+    /*------------------------------------- Formulario de login  -------------------------------------------*/
+    /*------------------------------------------------------------------------------------------------------*/
+
+    .registro body {
+        background-color: #FFF1E6;
+    }
+    
+    .registro h1{
+        color: #CB997E;
+        text-align: center;
+        margin-top: 15px;
+    }
+    .registro .registroCompleto{
+       width: 45%;
+       margin:auto;
+       display: flex;
+       flex-direction:column ;
+       align-items: center;
+       justify-content: space-around;
+       color:#CB997E;
+       
+    }
+    .registro .registroNombre,.registro .registroEmail,.registro .registroTelefono,.registro .registroContraseña, .registro.registroContraseñax2{
+        padding: 10px;
+    }
+    
+    .registro .nombre,.registro .telefono,.registro .email,.registro .contraseña,.registro .contraseñax2{
+        margin-bottom: 2.5%;
+        margin-left: 7px;
+        font-size: 17px;
+        font-weight: bold;
+    }
+    .registro #AlmacenarNombre,.registro #AlmacenarEmail,.registro #AlmacenarTelefono{
+        color: #DDBEA9;
+        
+    }
+    .registro .yaTenesCuenta a{
+        color:#CB997E;
+    }
+    .registro .yaTenesCuenta{
+        text-align: center;
+        margin-top:15px;
+        margin-bottom:20px;
+    }
+    
+    .registro .botonCuenta{
+        margin-top: 15px;
+        float: center;
+        border-radius: 12px;
+        background-color: #CB997E;
+        font-size: 20px;
+        text-align: center;
+        width: 55vw;
+        border-color: #CB997E;
+        padding:5px;
+        color: white;
+    }
+    .registro #AlmacenarNombre,.registro #AlmacenarEmail,.registro #AlmacenarTelefono,.registro #AlmacenarContraseña,.registro #AlmacenarContraseñax2, .registro .avatar{
+        border-radius: 9px;
+        border-width: 1px;
+        font-size:16px;
+        padding: 1%;
+        width: 100%;
+    }
+    .registro input::placeholder{
+    color:#CB997E;
+    }
+    .registro .botonCuenta:hover{
+        background-color: #DDBEA9;
+        transition: background-color, 0,5ms;
+    }
+    /*------------------------------------- Textos en los formularios de carga y registro ----------------------------*/
+    .registro .text-danger {
+        font-style: bold;
+        color: red;
+        }
+        
+    .registro .isInvalid {
+        border-color: red;
+        border-radius: 3px;
+        }
+        
+    @media (max-width: 576px) {
+        .registro .registroCompleto{
+            width: 90vw;
+        }
+        .registro #AlmacenarNombre,.registro #AlmacenarEmail,.registro #AlmacenarTelefono,.registro #AlmacenarContraseña, .registro #AlmacenarContraseñax2 {
+            width: 85vw;
+        }
+        .registro .botonCuenta{
+            width: 90vw;
+        }
+    }
+    /*------------------------------------- Formulario de preguntasFrecuentes  -------------------------------------------*/
+    /*--------------------------------------------------------------------------------------------------------------------*/
+
+    .preguntasFrecuentes{
+        color:#CB997E;
+    }
+    .preguntasFrecuentes .titulo{
+        padding: 2%;
+        font-weight:bold;
+        text-align: center;
+    }
+    .preguntasFrecuentes p{
+        padding: 1%;
+        margin-bottom: 1vh;
+    }
+    .preguntasFrecuentes .preguntas{
+        font-weight: bold;
+        margin-bottom: 1vh;
+    }
+    @media (min-width: 576px){
+        .preguntasFrecuentes {
+            width: 60vw;
+        }
+    }
+    @media (min-width: 1200px){
+        .preguntasFrecuentes {
+            width: 70vw;
+        }
+    }
+
+    /*------------------------------------- Perfil de usuario logeado  ---------------------------------------------------*/
+    /*--------------------------------------------------------------------------------------------------------------------*/
+
+    
+    .perfilH1{
+        color: #CB997E;
+        margin-top: 15px;
+        width: 40%;
+    }
+    .perfilContMainA{
+       width: 90%;
+       margin:auto;
+       display: flex;
+       align-items: center;
+       justify-content: space-around;
+       color:#CB997E;
+       padding: 0px;
+    }
+    .perfilContMainAA{
+        width: 60%;
+        margin:auto;
+        display: flex;
+        color:#CB997E;
+        padding: 0px;
+        flex-direction:column ;
+     }
+     .perfilImagen{
+        width: 20%;
+     }
+

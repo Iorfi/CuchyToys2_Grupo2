@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title> Categorías de juguetes </title>
+    <%- include ("../partials/head") %>
+</head>
+<body>
+
+    <%- include ("../partials/header") %>
+
+    <main class="categoriasDeJuguetes">
+            <!-- Busqueda por destacado o precio -->
+            <div class="destacadoOprecio">
+                <select name="destacado o precio" id="destacadoOprecio">
+                    <option>Más destacado</option>
+                    <option>Menor precio</option>
+                    <option>Mayor precio</option>
+                </select>
+            </div>
+            
+            <!-- Division de Articles -->
+            <div class="main-articles"> 
+                <!-- Section Categories -->
+                <section class='subcategories'>
+                    <h3>Categorías</h3>
+                    <a href="/products/categoriasDeJuguetes/Juego" class = "contNavA"><h4> <li>Juego</li> </h4> </a> 
+                    <a href="/products/categoriasDeJuguetes/Animales" class = "contrNavA"> <h4> <li>Animales</li> </h4> </a>
+                    <a href="/products/categoriasDeJuguetes" class = "contNavA"><h4> <li>Todos</li> </h4> </a> 
+            </section>
+                <!-- Section Articles -->
+                    <section>
+                        <div class="products">
+                                <% for (i = 0 ; i < products.length ; i++) { %>
+                                    <article>
+                                    <img src="/images/products/<%-products[i].image%>" class="product_img">
+                                    <div class="main-article">
+                                        <i class="fas fa-truck"></i>
+                                        <p class="description"><%-products[i].name %></p>
+                                        <p class="price">$<%-products[i].price %></p>
+                                        <% if(products[i].discount != null ) {%>
+                                        <p class="discount"><%-products[i].discount %>% off</p> 
+                                        <% }%>
+                                        <h4 class="description"><%-products[i].description %></h4>
+                                    </div>
+                                    </article>
+                                <% } %>
+                            
+                        </div>  
+                    </section>    
+                </div>
+        </main>
+
+        <%- include ("../partials/footer") %>
+</body>
+</html> 

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include ("../partials/head") %>
+    <title> Perfil</title>
+</head>
+<body>
+    <%- include ("../partials/header.ejs") %>
+  <main>
+    <div class = perfilContMainA>
+      <img class= perfilImagen src="/images/users/<%= user.avatar%>">
+      <div class = perfilContMainAA>
+        <h1 class = perfilH1> Hola de nuevo, <%=user.first_name %></h1>
+        <p><%=user.email%></p>
+    </div>
+
+  </main>
+
+  <%- include ("../partials/footer") %>
+  
+</body>
+</html> 

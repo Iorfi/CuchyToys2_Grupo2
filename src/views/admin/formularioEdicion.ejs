@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title> formulario de Edición de Producto</title>
+    <%- include ("../partials/head") %>
+</head>
+<body>
+    <%- include ("../partials/header.ejs") %>
+
+    <main class = "formularioEdicion">
+        <form action="/admin/formularioEdicion/<%-id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <h1 >¡Edita tu producto!</h1><!--contenedor del titulo-->
+    
+                <div class="lineaHorizontal"></div>
+
+                <h2 class="titulos" for="nombreP">Estas editando:<%-products[id-1].name %></h2>
+                    
+    
+                    <div class="lineaHorizontal"></div>
+        
+                    <label class="titulos"  for="name">Nuevo nombre: </label>
+                    <input type="text" id="fileImagen" name="name" value="<%-products[id-1].name %>">
+
+                    <div class="lineaHorizontal"></div>
+
+                    <label class="titulos" for="category">¿En que categoría se encuentra tu producto?</label>
+                    <div class="contFormA">
+                        <label for= "category"> Juego</label>
+                        <input type="radio" id="category" value= "Juego"name="category">
+                        <label for= "category"> Animales</label>
+                        <input type="radio" id="category" value= "Animales"name="category">
+    
+                    </div>
+    
+                    <div class="lineaHorizontal"></div>
+                  
+                    <label class="titulos" for="subcategory">¿En que subcategoría se encuentra tu producto?</label>
+                    <div class="contFormA">
+                        <label for= "subcategory"> Juegos de mesa</label>
+                        <input type="radio" id="subcategory" value= "Juegos de mesa"name="subcategory">
+                        <label for= "subcategory"> Aprendiendo a escribir</label>
+                        <input type="radio" id="subcategory" value= "Aprendiendo a escribir"name="subcategory">
+                        <label for= "subcategory"> Grafomotricidad</label>
+                        <input type="radio" id="subcategory" value= "Grafomotricidad"name="subcategory">
+                        <label for= "subcategory"> Bosque</label>
+                        <input type="radio" id="subcategory" value= "Bosque"name="subcategory">
+                        <label for= "subcategory"> Selva</label>
+                        <input type="radio" id="subcategory" value= "Selva"name="subcategory">
+                        <label for= "category"> Mar</label>
+                        <input type="radio" id="subcategory" value= "Mar"name="subcategory">
+                        <label for= "category"> Granja</label>
+                        <input type="radio" id="subcategory" value= "Granja"name="subcategory">
+                    </div>
+                <div class="lineaHorizontal"></div>
+              
+                    <label class="titulos"  for="Email">¿Quieres que se encuentre destacada?</label>
+                <div class="contFormA">
+                    <label for= "pack"> Si</label>
+                    <input type="radio" id="formatoVenta" value= "si"name="destacado">
+                    <label for= "unidad">No</label>
+                    <input type="radio" id="formatoVenta" value= "no"name="destacado">
+                </div>
+
+
+                <div class="lineaHorizontal"></div>
+
+                    <label class="titulos"  for="Email">Agregá algunas fotos de tu producto!</label>
+                    <input type="file" name="product-image" id="product-image">
+
+                <div class="lineaHorizontal"></div>      
+
+                    <label class="titulos"  for="price">Define el precio del producto</label>
+                    <input type="number" id="precio" name="price" value="<%-products[id-1].price %>" >
+
+                <div class="lineaHorizontal"></div>
+                                                          
+                <label class="titulos"  for="discount">¿Ofeces descuento?</label>
+                <input type="textarea" id="discount" name="discount"value="<%-products[id-1].discount %>" >
+                
+                <div class="lineaHorizontal"></div>
+                                                    
+                    <label class="titulos"  for="Email">¿Querés agregar una descripción?</label>
+                    <input class="desc" type="textarea" name="descripcion" value="<%-products[id-1].description %>" >  
+
+                    <button class="publicar" type="submit" >editar</button> 
+        </form>
+    </main>
+       <%- include ("../partials/footer") %>
+</body>
+</html> 
