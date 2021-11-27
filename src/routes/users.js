@@ -27,7 +27,7 @@ const authMiddleware = require('../middlewares/authMiddleware')
 //Express Validator
 const { body } = require ("express-validator")
 
-const validations = [
+const validations = [    
     body("first_name").notEmpty() .withMessage("Tienes que escribir un nombre"), 
     body("last_name").notEmpty().withMessage("Tienes que escribir un apellido"),
     body("email").notEmpty() .withMessage("Tienes que escribir un email").bail() .isEmail().withMessage("Debes escribir un formato de correo electrónico válido"), 
