@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = "Users"
+    let alias = "SubCategories"
     let cols = {
         ID: {
             type: dataTypes.INTEGER, 
@@ -8,21 +8,6 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         NAME: {
-            type: dataTypes.STRING(50)
-        },
-        USERNAME: {
-            type: dataTypes.STRING(50)
-        },
-        EMAIL: {
-            type: dataTypes.STRING(70)
-        },
-        PASSWORD: {
-            type: dataTypes.STRING(50)
-        },
-        CATEGORY: {
-            type: dataTypes.STRING(50)
-        },
-        AVATAR: {
             type: dataTypes.STRING(50)
         },
         CREATED_AT: {
@@ -38,16 +23,16 @@ module.exports = (sequelize, dataTypes) => {
 
     }
     let config = {
-        tableName: "users",
+        tableName: "subcategories",
         timestamps: false
     }
 
 
     const Users = sequelize.define (alias, cols, config)
 
-    Users.associate = function(models) {
-        Users.HasMany (models.UserProducts, {
-            as: "usersProd",
+    Categories.associate = function(models) {
+        Categories.HasMany (models.Products, {
+            as: "categProd",
             foreignKey: "ID"
         })
     }
