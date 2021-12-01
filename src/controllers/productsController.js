@@ -1,5 +1,6 @@
 const path = require('path');
-const fs = require('fs')
+const fs = require('fs');
+const db = require('../../database/models');
 const productsFile = path.join(__dirname, '../data/productos.json')
 const categorysFile = path.join(__dirname, '../data/categorias.json')
 const products = JSON.parse(fs.readFileSync(productsFile, 'utf-8'))
@@ -27,10 +28,18 @@ const productsControlador = {
 
     },
 
-    detalleDeProducto: (req,res)=> {
+  /*   detalleDeProducto: (req,res)=> {
         let idProducto = req.params.id;
         res.render('products/detalleDeProducto', {products, id: products, idProducto})
     
+    }, */
+    detalleDeProducto: (req,res)=>{
+        db.Prodcuts.findByPk(req.params.id, {
+            include: [{association: "categories"}, {association: "products_id"}]
+        })
+            .then (function(producto) {
+            res.render ("detalleDeProducto"), {producto:producto}  
+            })
     },
 
     categoriasDeJuguetesEdades: (req,res)=>{
@@ -49,6 +58,7 @@ const productsControlador = {
 		fs.writeFileSync(productsFile, productsUpdatedJSON);
 		res.redirect('/');
     }
+    
 
 }
     module.exports = productsControlador;

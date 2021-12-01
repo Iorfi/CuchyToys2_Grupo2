@@ -49,14 +49,14 @@ module.exports = (sequelize, dataTypes) => {
     
     Products.associate = function(models) {
         Products.HasMany (models.UserProducts, {
-            as: "usersProd",
+            as: "product_id",
             foreignKey: "ID"
         })
     }
 
     Products.associate = function(models) {
         Products.BelongsTo (models.Categories, {
-            as: "categProd",
+            as: "categories",
             foreignKey: "CATEGORY_ID"
         })
     }

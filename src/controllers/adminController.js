@@ -3,6 +3,7 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 const { v4: uuidv4 } = require('uuid');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
+const db = require ("../../database/models")
 
 const adminController ={
 
@@ -44,7 +45,9 @@ create: (req, res) => {
 },
 
 // Create -  Method to store
-store: (req, res) => {
+
+
+/* store: (req, res) => {
     if (req.file) {
         let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         let newProduct = {
@@ -66,6 +69,30 @@ store: (req, res) => {
     } else {
         res.render('admin/formularioCarga');
     }
+} */
+
+generateId: function () {
+    let allUsers = this.findAll(); 
+    let lastUser = allUsers.pop();
+    if (lastUser) {
+     return lastUser.id + 1;
+    }
+    return 1;
+},
+
+    store: (req, res) => {
+    db.Products.create({
+
+       //  username:  ,
+        price: req.body.price ,
+        description: req.body.description ,
+        image: req.body.product-image ,
+        category_id: req.body.category,
+        subcategory_id: req.body.subcategory,
+        destacado: req.body.destacado,
+        discount: req.body.discount,
+    })
 }
+
 }
 module.exports = adminController;
