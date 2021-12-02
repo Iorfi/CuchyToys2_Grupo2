@@ -31,18 +31,18 @@
                     <section>
                         <div class="products">
                                 <% for (i = 0 ; i < products.length ; i++) { %>
-                                    <article>
-                                    <img src="/images/products/<%-products[i].image%>" class="product_img">
+                                    <a href="/products/detalleDeProducto/<%-products[i].ID%>"><article>
+                                    <img src="/images/products/<%-products[i].IMAGE%>" class="product_img">
                                     <div class="main-article">
                                         <i class="fas fa-truck"></i>
-                                        <p class="description"><%-products[i].name %></p>
-                                        <p class="price">$<%-products[i].price %></p>
-                                        <% if(products[i].discount != null ) {%>
-                                        <p class="discount"><%-products[i].discount %>% off</p> 
+                                        <p class="description"><%-products[i].NAME %></p>
+                                        <p class="price">$<%-products[i].PRICE %></p>
+                                        <% if(products[i].DISCOUNT != null ) {%>
+                                        <p class="discount"><%-products[i].DISCOUNT %>% off</p> 
                                         <% }%>
-                                        <h4 class="description"><%-products[i].description %></h4>
+                                        <h4 class="description"><%-products[i].DESCRIPTION %></h4>
                                     </div>
-                                    </article>
+                                    </article></a>
                                 <% } %>
                             
                         </div>  

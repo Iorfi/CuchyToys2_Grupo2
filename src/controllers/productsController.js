@@ -3,7 +3,7 @@ const fs = require('fs');
 const db = require('../../database/models');
 const productsFile = path.join(__dirname, '../data/productos.json')
 const categorysFile = path.join(__dirname, '../data/categorias.json')
-const products = JSON.parse(fs.readFileSync(productsFile, 'utf-8'))
+
 const category = JSON.parse(fs.readFileSync(categorysFile, 'utf-8'))
 
 const productsControlador = {
@@ -14,16 +14,28 @@ const productsControlador = {
     categoriasDeJuguetes: (req,res)=>{ 
         let porductosAMostrar =[]
         if(req.params.cat != undefined){
-            
+            //esto hay que arreglarlo tengo dudas lo tengo que ahblar con los profesores
             let productosFiltrados = []
-            products.forEach(prod => {
+            db.Products.findAll()
+            .then(function(products){
+                return products
+            })
+            .then(products.forEach(prod => {
                 if(prod.category.toLowerCase() == req.params.cat.toLowerCase()  ){
                     productosFiltrados.push(prod)
                 }
-            });
+            }))
+            
             porductosAMostrar = productosFiltrados
         }
-        else{porductosAMostrar = products}
+        else{
+            db.Products.findAll()
+            .then(function(products){
+                let porductosAMostrar = products
+                return porductosAMostrar
+            })
+            
+        }
         res.render('products/categoriasDeJuguetes',{products: porductosAMostrar})
 
     },
@@ -34,11 +46,11 @@ const productsControlador = {
     
     }, */
     detalleDeProducto: (req,res)=>{
-        db.Prodcuts.findByPk(req.params.id, {
+        db.Products.findByPk(req.params.id, {
             include: [{association: "categories"}, {association: "products_id"}]
         })
             .then (function(producto) {
-            res.render ("detalleDeProducto"), {producto:producto}  
+            res.render ("products/detalleDeProducto"), {producto:producto}  
             })
     },
 
