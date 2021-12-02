@@ -40,11 +40,6 @@ const productsControlador = {
 
     },
 
-  /*   detalleDeProducto: (req,res)=> {
-        let idProducto = req.params.id;
-        res.render('products/detalleDeProducto', {products, id: products, idProducto})
-    
-    }, */
     detalleDeProducto: (req,res)=>{
         db.Products.findByPk(req.params.id, {
             include: [{association: "categories"}, {association: "products_id"}]
@@ -58,7 +53,26 @@ const productsControlador = {
         let productosPorEdades = products.filter(i => i.category === 'Juego')
         res.render('products/categoriasDeJuguetesEdades',{ edades : productosPorEdades})},
 
+
     delete: (req,res) => {
+        db.Products.destroy ({
+            where: {
+                id: req.params.id
+            }
+        })
+
+        res.redirect("products/categoriasDeJuguetes")
+    }
+
+}
+    module.exports = productsControlador;
+
+      /*   detalleDeProducto: (req,res)=> {
+        let idProducto = req.params.id;
+        res.render('products/detalleDeProducto', {products, id: products, idProducto})
+    }, */
+
+    /*     delete: (req,res) => {
         let idProduct = parseInt (req.params.id)
         let indexProduct = products.findIndex(product => product.id === idProduct);
 		let imagePath = path.join(__dirname, '../../public/images/products', products[indexProduct].image);
@@ -69,8 +83,5 @@ const productsControlador = {
 		let productsUpdatedJSON = JSON.stringify(productsUpdated);
 		fs.writeFileSync(productsFile, productsUpdatedJSON);
 		res.redirect('/');
-    }
-    
+    } */
 
-}
-    module.exports = productsControlador;
