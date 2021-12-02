@@ -7,12 +7,76 @@ const db = require ("../../database/models")
 
 const adminController ={
 
-    edicion: (req,res)=>{
+        edicion: (req,res)=>{ 
+            let pedidoProducto = db.Products.findByPk(req.params.id)
+            let pedidoCategories = db.Products.findAll()
+            let pedidoSubCategories = db.Products.findAll()
+
+            Promise.all ([pedidoProducto, pedidoCategories, pedidoSubCategories]) 
+                .then (function ([producto, category, subcategory]) {
+                    res.render("admin/formularioEdicion", {producto:producto, category:category, subcategory:subcategory})
+                })
+        },
+
+        update: (req,res)=>{
+            db.Products.create({
+
+                name: req.body.name ,
+                price: req.body.price ,
+                description: req.body.description ,
+                image: req.body.product-image ,
+                category_id: req.body.category,
+                subcategory_id: req.body.subcategory,
+                destacado: req.body.destacado,
+                discount: req.body.discount,
+                }, {
+                    where: {
+                        id: req.params.id
+                     }
+                    })
+            res.redirect("/producto/" + req.params.id)
+        }, 
+    
+        // Create - Form to create
+        create: (req, res) => {
+            res.render('admin/formularioCarga');
+                },
+
+        // Create -  Method to store
+
+        generateId: function () {
+            let allUsers = this.findAll(); 
+            let lastUser = allUsers.pop();
+            if (lastUser) {
+            return lastUser.id + 1;
+            }
+            return 1;
+            },
+
+        store: (req, res) => {
+        db.Products.create({
+
+            name: req.body.name ,
+            price: req.body.price ,
+            description: req.body.description ,
+            image: req.body.product-image ,
+            category_id: req.body.category,
+            subcategory_id: req.body.subcategory,
+            destacado: req.body.destacado,
+            discount: req.body.discount,
+        })
+    }
+
+}
+module.exports = adminController;
+
+/*     edicion: (req,res)=>{
         let idP = req.params.id;
         res.render('admin/formularioEdicion',{products: products, id: idP})
         },
-        
-        update: (req,res)=>{
+      */   
+
+ /*    update: (req,res)=>{
             let idP = parseInt(req.params.id);
             products.forEach(product => {
                 if(product.id === idP) {
@@ -37,14 +101,7 @@ const adminController ={
                 let productsJSON = JSON.stringify(products, null, ' ');
                 fs.writeFileSync(productsFilePath, productsJSON);
 		        res.redirect('/products/categoriasDeJuguetes');
-            }  ,
-    
-// Create - Form to create
-create: (req, res) => {
-    res.render('admin/formularioCarga');
-},
-
-// Create -  Method to store
+            }  , */
 
 
 /* store: (req, res) => {
@@ -70,29 +127,3 @@ create: (req, res) => {
         res.render('admin/formularioCarga');
     }
 } */
-
-generateId: function () {
-    let allUsers = this.findAll(); 
-    let lastUser = allUsers.pop();
-    if (lastUser) {
-     return lastUser.id + 1;
-    }
-    return 1;
-},
-
-    store: (req, res) => {
-    db.Products.create({
-
-       //  username:  ,
-        price: req.body.price ,
-        description: req.body.description ,
-        image: req.body.product-image ,
-        category_id: req.body.category,
-        subcategory_id: req.body.subcategory,
-        destacado: req.body.destacado,
-        discount: req.body.discount,
-    })
-}
-
-}
-module.exports = adminController;
