@@ -1,11 +1,14 @@
+require('dotenv').config();
+
 module.exports = 
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "cuchytoys",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_UNAME,
+    "host": process.env.DB_HOST,
+    "dialect": "mysql",
+    "operatorAliases":0
   },
   "test": {
     "username": "root",
@@ -15,10 +18,11 @@ module.exports =
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_UNAME,
+    "host": process.env.DB_HOST,
+    "dialect": "mysql",
+    "operatorAliases":0
   }
 }
