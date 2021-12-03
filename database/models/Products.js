@@ -47,19 +47,21 @@ module.exports = (sequelize, dataTypes) => {
     const Users = sequelize.define (alias, cols, config)
 
     
-    Products.associate = function(models) {
+   /* REVISAR CODIGO
+   
+   Products.associate = function(models) {
         Products.HasMany (models.UserProducts, {
             as: "product_id",
             foreignKey: "ID"
         })
-    }
+    } 
 
     Products.associate = function(models) {
         Products.BelongsTo (models.Categories, {
             as: "categories",
             foreignKey: "CATEGORY_ID"
         })
-    }
+    }*/
 
 
 

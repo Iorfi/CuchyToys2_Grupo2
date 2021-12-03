@@ -45,12 +45,14 @@ module.exports = (sequelize, dataTypes) => {
 
     const Users = sequelize.define (alias, cols, config)
 
-    Users.associate = function(models) {
+/*  REVISAR CODIGO
+
+Users.associate = function(models) {
         Users.HasMany (models.UserProducts, {
             as: "usersProd",
             foreignKey: "ID"
         })
-    }
+    } */
 
     return Users;
 

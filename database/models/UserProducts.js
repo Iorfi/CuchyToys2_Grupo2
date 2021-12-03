@@ -24,7 +24,9 @@ module.exports = (sequelize, dataTypes) => {
 
     const UsersProducts = sequelize.define (alias, cols, config)
 
-    UserProducts.associate = function(models) {
+/* REVISAR CODIGO
+
+UserProducts.associate = function(models) {
         UserProducts.BelongsTo (models.User, {
             as: "usersProd",
             through: "userproduct",
@@ -36,9 +38,9 @@ module.exports = (sequelize, dataTypes) => {
             as: "usersProd",
             through: "userproduct",
             foreignKey: "PRODUCT_ID"
-        })
-    }
+        }) 
+    }*/
 
-    return Users;
+    return UsersProducts;
 
 }
