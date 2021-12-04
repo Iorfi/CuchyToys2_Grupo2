@@ -18,6 +18,8 @@ const usersController ={
 
     registerProcess: (req, res) => {
 
+        // FALTA CHEQUEAR SI EL MAIL Y EL NOMBRE DE USUARIO INGRESADOS YA EXISTEN
+
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             return res.render ("users/registro", {
@@ -28,17 +30,12 @@ const usersController ={
                 {   NAME:     req.body.first_name,
                     USERNAME: req.body.user_name,
                     EMAIL:    req.body.email,
-                    PASSWORD: req.body.password,
+                    PASSWORD: bcryptjs.hashSync(req.body.password, 10),
                     CATEGORY: req.body.category,
                     AVATAR:   req.body.avatar,
                 })
             res.render ("/")
-           }
-        
-    },
-    
-    
-    
+           }},
     
     /* {
         const resultValidation = validationResult(req);
@@ -69,6 +66,8 @@ const usersController ={
 
     
     login: (req,res)=>{res.render('users/login')},
+
+      // HAY QUE RECUPERAR LA INFO DE LOS CAMPOS DE LAS COLUMNAS DE LA BASE DE DATOS Y COMPARARLAS CON LOS INGRESADOS (no esta hecho)
 
     loginProcess: (req, res) => {
         const resultValidation = validationResult(req);
