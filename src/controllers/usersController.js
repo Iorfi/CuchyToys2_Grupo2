@@ -4,6 +4,7 @@ const usersFile = path.join(__dirname, '../data/usuarios.json')
 const { validationResult } = require("express-validator");
 const users = JSON.parse(fs.readFileSync(usersFile, 'utf-8'))
 const bcryptjs =require("bcryptjs")
+const db = require ("../../database/models")
 
 // const User = require("../models/User")
 const db = require("../../database/models") 
@@ -16,6 +17,30 @@ const usersController ={
     registro: (req,res)=>{res.render('users/registro')},
 
     registerProcess: (req, res) => {
+
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render ("users/registro", {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+           })} else {
+            db.Users.create (
+                {   NAME:     req.body.first_name,
+                    USERNAME: req.body.user_name,
+                    EMAIL:    req.body.email,
+                    PASSWORD: req.body.password,
+                    CATEGORY: req.body.category,
+                    AVATAR:   req.body.avatar,
+                })
+            res.render ("/")
+           }
+        
+    },
+    
+    
+    
+    
+    /* {
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
              return res.render ("users/registro", {
@@ -40,7 +65,7 @@ const usersController ={
          }
         let userCreate = User.create(userToCreate);
         return res.redirect('/users/login')
-    },
+    }, */
 
     
     login: (req,res)=>{res.render('users/login')},

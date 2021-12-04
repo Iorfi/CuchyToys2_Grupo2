@@ -31,16 +31,16 @@
             <% } %>
 
         <div class="registroNombre">
-            <div class="nombre">Ingrese su pellido</div>
+            <div class="nombre">Crea tu nombre de usuario</div>
             <label for="AlmacenarNombre"></label>
-            <input  type="text" id="AlmacenarNombre" name="last_name"  placeholder = "ej: Perez" 
-            class ="hola <%= locals.errors && errors.last_name ? 'isInvalid' : null %>" 
-            value ="<%= locals.oldData ? oldData.last_name : null %>" >
+            <input  type="text" id="AlmacenarNombre" name="user_name"  placeholder = "ej: Perez" 
+            class ="hola <%= locals.errors && errors.user_name ? 'isInvalid' : null %>" 
+            value ="<%= locals.oldData ? oldData.user_name : null %>" >
         </div>
 
-        <% if (locals.errors && errors.last_name) { %>
+        <% if (locals.errors && errors.user_name) { %>
         <div class="text-danger"> 
-            <%= errors.last_name.msg %>
+            <%= errors.user_name.msg %>
         </div>
         <% } %>
 
@@ -59,16 +59,16 @@
             <% } %>
         
         <div class="registroTelefono">
-            <div class="telefono">Telefono</div>
+            <div class="telefono">ingrese su categoría</div>
             <label for="AlmacenarTelefono"></label>
-            <input type="tel" id="AlmacenarTelefono" name="telefono"  placeholder = "ej: 1123445567"
-             class ="hola <%= locals.errors && errors.telefono ? 'isInvalid' : null %>"
-             value ="<%= locals.oldData ? oldData.telefono : null %>"  >
+            <input type="text" id="AlmacenarTelefono" name="category"  placeholder = ""
+             class ="hola <%= locals.errors && errors.category ? 'isInvalid' : null %>"
+             value ="<%= locals.oldData ? oldData.category : null %>"  >
         </div>
 
-        <% if (locals.errors && errors.telefono) { %>
+        <% if (locals.errors && errors.category) { %>
             <div class="text-danger"> 
-                <%= errors.telefono.msg %>
+                <%= errors.category.msg %>
             </div>
             <% } %>
         
