@@ -11,6 +11,11 @@ const session = require('express-session')
 const userlogged = require('./src/middlewares/userloggedmiddleware')
 
 
+/* SEGUN DIEGO */
+const { Sequelize } = require('sequelize');
+const config = require("./database/config/config")
+console.log(process.env.NODE_ENV)
+
 const publicPath = path.resolve(__dirname, "./public");
 
 app.use(express.static(publicPath));
@@ -33,6 +38,21 @@ app.use('/admin', adminRouter )
 app.use((req,res,next)=>{res.status(404).render("not-found")})
 
 
+/* SEGUN DIEGO */
+const sequelize = new Sequelize(config[process.env.NODE_ENV].database, config[process.env.NODE_ENV].username, config[process.env.NODE_ENV].password, {
+    host: config[process.env.NODE_ENV].host,
+    dialect: config[process.env.NODE_ENV].dialect
+  });
+
+  async function test() {
+    try {
+  await sequelize.authenticate();
+  console.log('Connection has been established successfully.');
+} catch (error) {
+  console.error('Unable to connect to the database:', error);
+}
+}
+test()
 
 
 app.listen(process.env.PORT || port,  function(){

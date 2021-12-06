@@ -1,3 +1,5 @@
+/* import Categories from "./Categories"; */
+
 module.exports = (sequelize, dataTypes) => {
 
     let alias = "Categories"
@@ -28,17 +30,17 @@ module.exports = (sequelize, dataTypes) => {
     }
 
 
-    const Users = sequelize.define (alias, cols, config)
+    const Categories = sequelize.define (alias, cols, config)
 
-  /*  REVISAR CODIGO
+
   
   Categories.associate = function(models) {
-        Categories.HasMany (models.Products, {
+        Categories.hasMany(models.Products, {
             as: "categProd",
             foreignKey: "ID"
         })
     }
- */
-    return Users;
+ 
+    return Categories;
 
 }

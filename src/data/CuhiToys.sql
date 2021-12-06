@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
--- Host: localhost    Database: CuchyToys
+-- Host: localhost    Database: cuchytoys
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.4.21-MariaDB
 
@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categories` (
-  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NAME` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `CREATED_AT` datetime NOT NULL,
   `MODIFIED_AT` datetime DEFAULT NULL,
@@ -49,18 +49,23 @@ DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product` (
-  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `USERNAME` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `PRICE` text COLLATE utf8_unicode_ci NOT NULL,
   `DESCRIPTION` text COLLATE utf8_unicode_ci NOT NULL,
   `IMAGE` text COLLATE utf8_unicode_ci NOT NULL,
   `CATEGORY_ID` int(11) NOT NULL,
+  `SUBCATEGORY_ID` int(11) NOT NULL,
   `DESTACADO` tinyint(4) NOT NULL,
   `DISCOUNT` int(11) DEFAULT NULL,
   `CREATED_AT` datetime NOT NULL,
   `MODIFIED_AT` datetime DEFAULT NULL,
   `DELETED_AT` datetime DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+  PRIMARY KEY (`ID`),
+  KEY `product_FK` (`CATEGORY_ID`),
+  KEY `product_FK_1` (`SUBCATEGORY_ID`),
+  CONSTRAINT `product_FK` FOREIGN KEY (`CATEGORY_ID`) REFERENCES `categories` (`ID`),
+  CONSTRAINT `product_FK_1` FOREIGN KEY (`SUBCATEGORY_ID`) REFERENCES `subcategories` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -74,6 +79,32 @@ LOCK TABLES `product` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `subcategories`
+--
+
+DROP TABLE IF EXISTS `subcategories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `subcategories` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `CREATED_AT` datetime NOT NULL,
+  `MODIFIED_AT` datetime DEFAULT NULL,
+  `DELETED_AT` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `subcategories`
+--
+
+LOCK TABLES `subcategories` WRITE;
+/*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
+/*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `userproduct`
 --
 
@@ -81,10 +112,14 @@ DROP TABLE IF EXISTS `userproduct`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `userproduct` (
-  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `USER_ID` int(11) NOT NULL,
   `PRODUCT_ID` int(11) NOT NULL,
-  PRIMARY KEY (`ID`)
+  PRIMARY KEY (`ID`),
+  KEY `userproduct_FK` (`USER_ID`),
+  KEY `userproduct_FK_1` (`PRODUCT_ID`),
+  CONSTRAINT `userproduct_FK` FOREIGN KEY (`USER_ID`) REFERENCES `users` (`ID`),
+  CONSTRAINT `userproduct_FK_1` FOREIGN KEY (`PRODUCT_ID`) REFERENCES `product` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -105,7 +140,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NAME` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `USERNAME` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `EMAIL` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
@@ -129,7 +164,7 @@ LOCK TABLES `users` WRITE;
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'CuchyToys'
+-- Dumping routines for database 'cuchytoys'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -141,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-04 23:10:05
+-- Dump completed on 2021-12-04 19:35:31

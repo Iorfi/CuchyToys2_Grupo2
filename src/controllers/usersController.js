@@ -7,7 +7,7 @@ const bcryptjs =require("bcryptjs")
 const db = require ("../../database/models")
 
 // const User = require("../models/User")
-const db = require("../../database/models") 
+/* const db = require("../../database/models")  */
 
 
 const usersController ={

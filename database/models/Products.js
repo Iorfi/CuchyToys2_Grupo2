@@ -1,3 +1,5 @@
+/* import Categories from "./Categories"; */
+
 module.exports = (sequelize, dataTypes) => {
 
     let alias = "Products"
@@ -39,34 +41,36 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config = {
-        tableName: "product",
+        tableName: "products",
         timestamps: false
     }
 
 
-    const Users = sequelize.define (alias, cols, config)
+    const Products = sequelize.define (alias, cols, config)
 
     
-   /* REVISAR CODIGO
+
    
-   Products.associate = function(models) {
+/*  Products.associate = function(models) {
         Products.HasMany (models.UserProducts, {
             as: "product_id",
             foreignKey: "ID"
         })
-    } 
+    }   */
 
     Products.associate = function(models) {
-        Products.BelongsTo (models.Categories, {
+        Products.belongsTo(models.Categories, {
             as: "categories",
             foreignKey: "CATEGORY_ID"
         })
-    }*/
+    }
 
 
 
 
 
-    return Users;
+    return Products;
 
+
+    
 }
