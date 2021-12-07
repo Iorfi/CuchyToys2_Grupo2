@@ -19,9 +19,7 @@ module.exports = (sequelize, dataTypes) => {
         PASSWORD: {
             type: dataTypes.STRING(50)
         },
-        CATEGORY: {
-            type: dataTypes.STRING(50)
-        },
+       
         AVATAR: {
             type: dataTypes.STRING(50)
         },
@@ -45,14 +43,12 @@ module.exports = (sequelize, dataTypes) => {
 
     const Users = sequelize.define (alias, cols, config)
 
-/*  REVISAR CODIGO
-
 Users.associate = function(models) {
-        Users.HasMany (models.UserProducts, {
+        Users.hasMany (models.UserProducts, {
             as: "usersProd",
             foreignKey: "ID"
         })
-    } */
+    } 
 
     return Users;
 

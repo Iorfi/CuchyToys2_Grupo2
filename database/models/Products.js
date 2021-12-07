@@ -51,12 +51,12 @@ module.exports = (sequelize, dataTypes) => {
     
 
    
-/*  Products.associate = function(models) {
-        Products.HasMany (models.UserProducts, {
+  Products.associate = function(models) {
+        Products.hasMany (models.UserProducts, {
             as: "product_id",
             foreignKey: "ID"
         })
-    }   */
+    }   
 
     Products.associate = function(models) {
         Products.belongsTo(models.Categories, {

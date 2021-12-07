@@ -18,29 +18,28 @@ module.exports = (sequelize, dataTypes) => {
 
     }
     let config = {
-        tableName: "userProducts",
+        tableName: "userproducts",
         timestamps: false
     }
 
-    const UsersProducts = sequelize.define (alias, cols, config)
+    const UserProducts = sequelize.define (alias, cols, config)
 
-/* REVISAR CODIGO
 
 UserProducts.associate = function(models) {
-        UserProducts.BelongsTo (models.User, {
+        UserProducts.belongsTo (models.User, {
             as: "usersProd",
             through: "userproduct",
             foreignKey: "USER_ID"
         })
     }
     UserProducts.associate = function(models) {
-        UserProducts.BelongsTo (models.Products, {
+        UserProducts.belongsTo (models.Products, {
             as: "usersProd",
             through: "userproduct",
             foreignKey: "PRODUCT_ID"
         }) 
-    }*/
+    }
 
-    return UsersProducts;
+    return UserProducts;
 
 }
