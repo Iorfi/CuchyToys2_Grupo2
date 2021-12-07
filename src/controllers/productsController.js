@@ -18,13 +18,13 @@ const productsControlador = {
             let productosFiltrados = []
             db.Products.findAll()
             .then(function(products){
-                return products
+                products.forEach(prod => {
+                    if(prod.category.toLowerCase() == req.params.cat.toLowerCase()  ){
+                        productosFiltrados.push(prod)
+                    }
+                })
             })
-            .then(products.forEach(prod => {
-                if(prod.category.toLowerCase() == req.params.cat.toLowerCase()  ){
-                    productosFiltrados.push(prod)
-                }
-            }))
+            
             
             porductosAMostrar = productosFiltrados
         }
@@ -32,7 +32,6 @@ const productsControlador = {
             db.Products.findAll()
             .then(function(products){
                 let porductosAMostrar = products
-                return porductosAMostrar
             })
             
         }

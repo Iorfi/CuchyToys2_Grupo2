@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
--- Host: localhost    Database: cuchytoys
+-- Host: localhost    Database: cuchytoys_nombredb
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.4.21-MariaDB
 
@@ -29,7 +29,7 @@ CREATE TABLE `categories` (
   `MODIFIED_AT` datetime DEFAULT NULL,
   `DELETED_AT` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Juegos de mesa','2021-12-06 00:00:00',NULL,NULL),(2,'Aprendiendo a escribir','2021-12-06 00:00:00',NULL,NULL),(3,'Grafomotricidad','2021-12-06 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +67,7 @@ CREATE TABLE `product` (
   KEY `product_FK_1` (`SUBCATEGORY_ID`),
   CONSTRAINT `product_FK` FOREIGN KEY (`CATEGORY_ID`) REFERENCES `categories` (`ID`),
   CONSTRAINT `product_FK_1` FOREIGN KEY (`SUBCATEGORY_ID`) REFERENCES `subcategories` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,6 +76,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (1,'TaTeTi Selva','150','TaTeTi suerte para Mi','https://images.app.goo.gl/CeqsPXZtWeQWvF428',1,2,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(2,'Memotest Graja','180','Recuerda y venceras','https://images.app.goo.gl/AsZ1KAXenhPde9Qh9',1,4,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(3,'Escribiendo Números Mar','250','Aprendiendo a escribir números','https://images.app.goo.gl/JhUsQ6PoK1D6ySBU7',3,3,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(4,'Leo y Escribo Bosque','370','Leo y Escribo jojojo','https://images.app.goo.gl/C9h15e61XJKKxs5F9',2,1,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(5,'A seguir la linea! Mar','450','Vamos a seguir la linea!!','https://images.app.goo.gl/Z6XCk7ZynnBNz241A',3,3,1,NULL,'2021-12-06 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +94,7 @@ CREATE TABLE `subcategories` (
   `MODIFIED_AT` datetime DEFAULT NULL,
   `DELETED_AT` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,6 +103,7 @@ CREATE TABLE `subcategories` (
 
 LOCK TABLES `subcategories` WRITE;
 /*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
+INSERT INTO `subcategories` VALUES (1,'Bosque','2021-12-06 00:00:00',NULL,NULL),(2,'Selva','2021-12-06 00:00:00',NULL,NULL),(3,'Mar','2021-12-06 00:00:00',NULL,NULL),(4,'Granja','2021-12-06 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,13 +148,12 @@ CREATE TABLE `users` (
   `USERNAME` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `EMAIL` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
   `PASSWORD` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `CATEGORY` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `AVATAR` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `CREATED_AT` datetime NOT NULL,
   `MODIFIED_AT` datetime DEFAULT NULL,
   `DELETED_AT` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -160,11 +162,12 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Bauti Iorfi','Iorfi','bauti@iorfi.com','123456','sssadasdas','2021-12-06 00:00:00',NULL,NULL),(2,'Mati Dopaso','Mati','mati@dopa.com','123456','asdasdagfxzcv','2021-12-06 00:00:00',NULL,NULL),(3,'Tuso Juan','Juan','juan@tuso.com','123456','21cxv63v1','2021-12-06 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'cuchytoys'
+-- Dumping routines for database 'cuchytoys_nombredb'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -176,4 +179,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-04 19:35:31
+-- Dump completed on 2021-12-06 20:59:56
