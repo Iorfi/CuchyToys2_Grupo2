@@ -14,7 +14,7 @@ const productsControlador = {
     categoriasDeJuguetes: (req,res)=>{ 
         let porductosAMostrar =[]
         if(req.params.cat != undefined){
-            //esto hay que arreglarlo tengo dudas lo tengo que ahblar con los profesores
+            
             let productosFiltrados = []
             db.Products.findAll()
             .then(function(products){
@@ -32,11 +32,13 @@ const productsControlador = {
             db.Products.findAll()
             .then(function(products){
                 let porductosAMostrar = products
+                return res.render('products/categoriasDeJuguetes',{products: porductosAMostrar})
             })
-            
-        }
-        res.render('products/categoriasDeJuguetes',{products: porductosAMostrar})
+            .catch(function(error){console.log(error)}
 
+            )
+        }
+        
     },
 
     detalleDeProducto: (req,res)=>{

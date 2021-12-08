@@ -6,8 +6,7 @@ const users = JSON.parse(fs.readFileSync(usersFile, 'utf-8'))
 const bcryptjs =require("bcryptjs")
 const db = require ("../../database/models")
 
-// const User = require("../models/User")
-/* const db = require("../../database/models")  */
+const User = require("../models/User")
 
 
 const usersController ={
@@ -16,26 +15,28 @@ const usersController ={
 
     registro: (req,res)=>{res.render('users/registro')},
 
-    registerProcess: (req, res) => {
-
+    registerProcess: (req,res)=>{ 
+        
         // FALTA CHEQUEAR SI EL MAIL Y EL NOMBRE DE USUARIO INGRESADOS YA EXISTEN
 
         const resultValidation = validationResult(req);
+        console.log(resultValidation);
         if (resultValidation.errors.length > 0) {
             return res.render ("users/registro", {
                 errors: resultValidation.mapped(),
                 oldData: req.body
            })} else {
-            db.Users.create (
+               
+            db.Users.create ( 
                 {   NAME:     req.body.first_name,
                     USERNAME: req.body.user_name,
                     EMAIL:    req.body.email,
                     PASSWORD: bcryptjs.hashSync(req.body.password, 10),
-                    CATEGORY: req.body.category,
-                    AVATAR:   req.body.avatar,
+                    AVATAR:   req.file.filename,
                 })
-            res.render ("/")
-           }},
+            res.redirect ("/users/login")
+        }
+           },
     
     /* {
         const resultValidation = validationResult(req);
@@ -67,30 +68,40 @@ const usersController ={
     
     login: (req,res)=>{res.render('users/login')},
 
-      // HAY QUE RECUPERAR LA INFO DE LOS CAMPOS DE LAS COLUMNAS DE LA BASE DE DATOS Y COMPARARLAS CON LOS INGRESADOS (no esta hecho)
+      
+          
+        // HAY QUE RECUPERAR LA INFO DE LOS CAMPOS DE LAS COLUMNAS DE LA BASE DE DATOS Y COMPARARLAS CON LOS INGRESADOS (no esta hecho)
 
     loginProcess: (req, res) => {
-        const resultValidation = validationResult(req);
-        let userToLogin = User.findByField("email", req.body.email);
-        if (userToLogin) {
-            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
-            if(isOkThePassword){
-                delete userToLogin.password 
-                delete userToLogin.password2
-                req.session.userLogged =userToLogin
-                return res.redirect('/users/perfil')
-            }
 
-            return res.render("users/login", {
-                errors: {email: {msg: "Las credenciales so invalidas"}}
-            })
-
-        }
- 
-        return res.render("users/Login", {
-            errors: {email: {msg: "No se encuentra este email en nuestra base de datos"}},
-            oldData: req.body
+        db.Users.findOne({where:{email:req.body.email}
         })
+        .then(function(usuario){ if (usuario!=null){
+                /* let isOkThePassword = bcryptjs.compareSync(req.body.password, usuario.PASSWORD) */
+                /* FALTA IMPLEMENTAR BYSCRIPT */
+                let isOkThePassword = req.body.password==usuario.PASSWORD
+                if(isOkThePassword){
+                    req.session.userLogged =usuario
+                    return res.redirect('/users/perfil')
+                }
+    
+                return res.render("users/login", {
+                    errors: {email: {msg: "Las credenciales es invalidas"}}
+                })
+    
+            }
+     
+            return res.render("users/Login", {
+                errors: {email: {msg: "No se encuentra este email en nuestra base de datos"}},
+                oldData: req.body
+            })
+            
+        }
+
+        )
+
+
+        
      },
  
  

@@ -58,20 +58,7 @@
             </div>
             <% } %>
         
-        <div class="registroTelefono">
-            <div class="telefono">ingrese su categoría</div>
-            <label for="AlmacenarTelefono"></label>
-            <input type="text" id="AlmacenarTelefono" name="category"  placeholder = ""
-             class ="hola <%= locals.errors && errors.category ? 'isInvalid' : null %>"
-             value ="<%= locals.oldData ? oldData.category : null %>"  >
-        </div>
-
-        <% if (locals.errors && errors.category) { %>
-            <div class="text-danger"> 
-                <%= errors.category.msg %>
-            </div>
-            <% } %>
-        
+       
         <div class="registroContraseña">
             <div class="contraseña">Contraseña</div>
             <label for="AlmacenarContraseña"></label>

@@ -29,9 +29,9 @@ const { body } = require ("express-validator")
 
 const validations = [    
     body("first_name").notEmpty() .withMessage("Tienes que escribir un nombre"), 
-    body("last_name").notEmpty().withMessage("Tienes que escribir un apellido"),
+    // body("last_name").notEmpty().withMessage("Tienes que escribir un apellido"),
     body("email").notEmpty() .withMessage("Tienes que escribir un email").bail() .isEmail().withMessage("Debes escribir un formato de correo electrónico válido"), 
-    body("telefono").notEmpty() .withMessage("Tienes que escribir un teléfono"), 
+    // body("telefono").notEmpty() .withMessage("Tienes que escribir un teléfono"), 
     body("password").notEmpty() .withMessage("Tienes que escribir una contraseña"), 
     body("password2").custom ((value, { req }) => {
         if (req.body.password !== req.body.password2) {
