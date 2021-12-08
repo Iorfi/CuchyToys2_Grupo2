@@ -153,7 +153,7 @@ CREATE TABLE `users` (
   `MODIFIED_AT` datetime DEFAULT NULL,
   `DELETED_AT` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,7 +162,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Bauti Iorfi','Iorfi','bauti@iorfi.com','123456','sssadasdas','2021-12-06 00:00:00',NULL,NULL),(2,'Mati Dopaso','Mati','mati@dopa.com','123456','asdasdagfxzcv','2021-12-06 00:00:00',NULL,NULL),(3,'Tuso Juan','Juan','juan@tuso.com','123456','21cxv63v1','2021-12-06 00:00:00',NULL,NULL);
+INSERT INTO `users` VALUES (6,'Matias','Dopazo','Mati@dopazo.com','$2a$10$BspeySPDaLnWiDlE4LV49.nxqQVnX2HDHBAIrujmjEY','users-1638929216797.png','0000-00-00 00:00:00',NULL,NULL),(7,'Bautista','Iorfi','bauti@iorfi.com','$2a$10$2GcUQ/gUdzIsYCUJLn0jT.ICIodS.Vd65d.IeLskgJz','users-1638929247222.png','0000-00-00 00:00:00',NULL,NULL),(8,'Juan','Tuso','juan@tuso.com','$2a$10$I0fmARiEUxykGUfaPPBqieATeSHXwiKfLG4BBz/4L6E','users-1638929272295.png','0000-00-00 00:00:00',NULL,NULL),(9,'prueba','prueba','prueba@prueba.com','$2a$10$TDmw31o0ppJ.Hcz2ZekUPe8cvmn/jqjY4wzKXHQZmJW','users-1638929335183.png','0000-00-00 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,4 +179,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-06 20:59:56
+-- Dump completed on 2021-12-07 23:14:19
