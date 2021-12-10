@@ -43,7 +43,7 @@ const productsControlador = {
 
     detalleDeProducto: (req,res)=>{
         db.Products.findByPk(req.params.id, {
-            include: [{association: "categories"}, {association: "products_id"}]
+            include: [{association: "categories"}, {association: "product_id"}]
         })
             .then (function(producto) {
             res.render ("products/detalleDeProducto"), {producto:producto}  

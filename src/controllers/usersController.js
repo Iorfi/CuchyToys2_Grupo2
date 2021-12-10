@@ -77,9 +77,7 @@ const usersController ={
         db.Users.findOne({where:{email:req.body.email}
         })
         .then(function(usuario){ if (usuario!=null){
-                /* let isOkThePassword = bcryptjs.compareSync(req.body.password, usuario.PASSWORD) */
-                /* FALTA IMPLEMENTAR BYSCRIPT */
-                let isOkThePassword = req.body.password==usuario.PASSWORD
+                let isOkThePassword = bcryptjs.compareSync(req.body.password, usuario.PASSWORD)
                 if(isOkThePassword){
                     req.session.userLogged =usuario
                     return res.redirect('/users/perfil')
