@@ -32,18 +32,22 @@
                     <section>
                         <div class="products">
                                 <% for (i = 0 ; i < products.length ; i++) { %>
-                                    <a href="/products/detalleDeProducto/<%-products[i].ID%>"><article>
-                                    <img src="/images/products/<%-products[i].IMAGE%>" class="product_img">
-                                    <div class="main-article">
-                                        <i class="fas fa-truck"></i>
-                                        <p class="description"><%-products[i].NAME %></p>
-                                        <p class="price">$<%-products[i].PRICE %></p>
-                                        <% if(products[i].DISCOUNT != null ) {%>
-                                        <p class="discount"><%-products[i].DISCOUNT %>% off</p> 
-                                        <% }%>
-                                        <h4 class="description"><%-products[i].DESCRIPTION %></h4>
+                                    <div class = "prodPart">
+                                            <div class = "prodPartA">
+                                                <a href="/products/detalleDeProducto/<%-products[i].ID%>">  </a>
+                                                <img src="/images/products/<%-products[i].IMAGE%>" class="product_img">
+                                            </div>
+                                            <div class = "prodPartB">
+                                                <i class="fas fa-truck"></i>
+                                                <p class= "information"><%-products[i].NAME %></p>
+                                                <p class="price">$<%-products[i].PRICE %></p>
+                                                <% if(products[i].DISCOUNT != null ) {%>
+                                                <p class="discount"><%-products[i].DISCOUNT %>% off</p> 
+                                                <% }%>
+                                                <h4 class= "information"><%-products[i].DESCRIPTION %></h4>
+                                            </div>
                                     </div>
-                                    </article></a>
+
                                 <% } %>
                             
                         </div>  
