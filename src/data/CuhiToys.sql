@@ -149,6 +149,7 @@ CREATE TABLE `users` (
   `EMAIL` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
   `PASSWORD` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `AVATAR` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `IS_ADMIN` tinyint(1) DEFAULT 0,
   `CREATED_AT` datetime NOT NULL,
   `MODIFIED_AT` datetime DEFAULT NULL,
   `DELETED_AT` datetime DEFAULT NULL,
@@ -162,7 +163,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (6,'Matias','Dopazo','Mati@dopazo.com','$2a$10$BspeySPDaLnWiDlE4LV49.nxqQVnX2HDHBAIrujmjEY','users-1638929216797.png','0000-00-00 00:00:00',NULL,NULL),(7,'Bautista','Iorfi','bauti@iorfi.com','$2a$10$2GcUQ/gUdzIsYCUJLn0jT.ICIodS.Vd65d.IeLskgJz','users-1638929247222.png','0000-00-00 00:00:00',NULL,NULL),(8,'Juan','Tuso','juan@tuso.com','$2a$10$I0fmARiEUxykGUfaPPBqieATeSHXwiKfLG4BBz/4L6E','users-1638929272295.png','0000-00-00 00:00:00',NULL,NULL),(9,'prueba','prueba','prueba@prueba.com','$2a$10$TDmw31o0ppJ.Hcz2ZekUPe8cvmn/jqjY4wzKXHQZmJW','users-1638929335183.png','0000-00-00 00:00:00',NULL,NULL),(10,'jose','jose perez','jose@perez.com','$2a$10$ZYsl8o9KYyjYRNvLsuzaCOyUmUhQbrGAMA/VMgxDszV','users-1639096703668.png','0000-00-00 00:00:00',NULL,NULL);
+INSERT INTO `users` VALUES (6,'Matias','Dopazo','Mati@dopazo.com','$2a$10$BspeySPDaLnWiDlE4LV49.nxqQVnX2HDHBAIrujmjEY','users-1638929216797.png',1,'0000-00-00 00:00:00',NULL,NULL),(7,'Bautista','Iorfi','bauti@iorfi.com','$2a$10$2GcUQ/gUdzIsYCUJLn0jT.ICIodS.Vd65d.IeLskgJz','users-1638929247222.png',0,'0000-00-00 00:00:00',NULL,NULL),(8,'Juan','Tuso','juan@tuso.com','$2a$10$I0fmARiEUxykGUfaPPBqieATeSHXwiKfLG4BBz/4L6E','users-1638929272295.png',0,'0000-00-00 00:00:00',NULL,NULL),(9,'prueba','prueba','prueba@prueba.com','$2a$10$TDmw31o0ppJ.Hcz2ZekUPe8cvmn/jqjY4wzKXHQZmJW','users-1638929335183.png',0,'0000-00-00 00:00:00',NULL,NULL),(10,'jose','jose perez','jose@perez.com','$2a$10$ZYsl8o9KYyjYRNvLsuzaCOyUmUhQbrGAMA/VMgxDszV','users-1639096703668.png',0,'0000-00-00 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-09 22:12:24
+-- Dump completed on 2021-12-09 22:51:31
