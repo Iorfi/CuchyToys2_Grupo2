@@ -23,6 +23,9 @@ module.exports = (sequelize, dataTypes) => {
         AVATAR: {
             type: dataTypes.STRING(50)
         },
+        IS_ADMIN: {
+            type: dataTypes.BOOLEAN
+        },
         CREATED_AT: {
             type: dataTypes.DATE
         },
