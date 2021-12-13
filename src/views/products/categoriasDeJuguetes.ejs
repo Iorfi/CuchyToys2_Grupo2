@@ -23,26 +23,31 @@
                 <!-- Section Categories -->
                 <section class='subcategories'>
                     <h3>Categorías</h3>
-                    <a href="/products/categoriasDeJuguetes/Juego" class = "contNavA"><h4> <li>Juego</li> </h4> </a> 
-                    <a href="/products/categoriasDeJuguetes/Animales" class = "contrNavA"> <h4> <li>Animales</li> </h4> </a>
+                    <a href="/products/categoriasDeJuguetes/Juegos de mesa" class = "contNavA"><h4> <li>Juegos de mesa</li> </h4> </a> 
+                    <a href="/products/categoriasDeJuguetes/Aprendiendo a escribir" class = "contrNavA"> <h4> <li>Aprendiendo a escribir</li> </h4> </a>
+                    <a href="/products/categoriasDeJuguetes/Grafomotricidad" class = "contrNavA"> <h4> <li>Grafomotricidad</li> </h4> </a>
                     <a href="/products/categoriasDeJuguetes" class = "contNavA"><h4> <li>Todos</li> </h4> </a> 
             </section>
                 <!-- Section Articles -->
                     <section>
                         <div class="products">
                                 <% for (i = 0 ; i < products.length ; i++) { %>
-                                    <a href="/products/detalleDeProducto/<%-products[i].ID%>"><article>
-                                    <img src="/images/products/<%-products[i].IMAGE%>" class="product_img">
-                                    <div class="main-article">
-                                        <i class="fas fa-truck"></i>
-                                        <p class="description"><%-products[i].NAME %></p>
-                                        <p class="price">$<%-products[i].PRICE %></p>
-                                        <% if(products[i].DISCOUNT != null ) {%>
-                                        <p class="discount"><%-products[i].DISCOUNT %>% off</p> 
-                                        <% }%>
-                                        <h4 class="description"><%-products[i].DESCRIPTION %></h4>
+                                    <div class = "prodPart">
+                                            <div class = "prodPartA">
+                                                <a href="/products/detalleDeProducto/<%-products[i].ID%>">  </a>
+                                                <img src="/images/products/<%-products[i].IMAGE%>" class="product_img">
+                                            </div>
+                                            <div class = "prodPartB">
+                                                <i class="fas fa-truck"></i>
+                                                <p class= "information"><%-products[i].NAME %></p>
+                                                <p class="price">$<%-products[i].PRICE %></p>
+                                                <% if(products[i].DISCOUNT != null ) {%>
+                                                <p class="discount"><%-products[i].DISCOUNT %>% off</p> 
+                                                <% }%>
+                                                <h4 class= "information"><%-products[i].DESCRIPTION %></h4>
+                                            </div>
                                     </div>
-                                    </article></a>
+
                                 <% } %>
                             
                         </div>  

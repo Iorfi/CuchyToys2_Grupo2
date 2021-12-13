@@ -76,7 +76,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'TaTeTi Selva','150','TaTeTi suerte para Mi','https://images.app.goo.gl/CeqsPXZtWeQWvF428',1,2,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(2,'Memotest Graja','180','Recuerda y venceras','https://images.app.goo.gl/AsZ1KAXenhPde9Qh9',1,4,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(3,'Escribiendo Números Mar','250','Aprendiendo a escribir números','https://images.app.goo.gl/JhUsQ6PoK1D6ySBU7',3,3,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(4,'Leo y Escribo Bosque','370','Leo y Escribo jojojo','https://images.app.goo.gl/C9h15e61XJKKxs5F9',2,1,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(5,'A seguir la linea! Mar','450','Vamos a seguir la linea!!','https://images.app.goo.gl/Z6XCk7ZynnBNz241A',3,3,1,NULL,'2021-12-06 00:00:00',NULL,NULL);
+INSERT INTO `product` VALUES (1,'TaTeTi Selva','150','TaTeTi suerte para Mi','Tateti.gif',1,2,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(2,'Memotest Graja','180','Recuerda y venceras','c40f40ee97c6678e7f426a5c8895c1b1.jpg',1,4,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(3,'Escribiendo Números Mar','250','Aprendiendo a escribir números','descarga.jfif',3,3,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(4,'Leo y Escribo Bosque','370','Leo y Escribo jojojo','LEO-Y-ESCRIBO-PORTADA.jpg',2,1,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(5,'A seguir la linea! Mar','450','Vamos a seguir la linea!!','13728529_1062315260528054_456195555_o.jfif',3,3,1,NULL,'2021-12-06 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,11 +149,12 @@ CREATE TABLE `users` (
   `EMAIL` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
   `PASSWORD` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `AVATAR` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `IS_ADMIN` tinyint(1) DEFAULT 0,
   `CREATED_AT` datetime NOT NULL,
   `MODIFIED_AT` datetime DEFAULT NULL,
   `DELETED_AT` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,7 +163,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (6,'Matias','Dopazo','Mati@dopazo.com','$2a$10$BspeySPDaLnWiDlE4LV49.nxqQVnX2HDHBAIrujmjEY','users-1638929216797.png','0000-00-00 00:00:00',NULL,NULL),(7,'Bautista','Iorfi','bauti@iorfi.com','$2a$10$2GcUQ/gUdzIsYCUJLn0jT.ICIodS.Vd65d.IeLskgJz','users-1638929247222.png','0000-00-00 00:00:00',NULL,NULL),(8,'Juan','Tuso','juan@tuso.com','$2a$10$I0fmARiEUxykGUfaPPBqieATeSHXwiKfLG4BBz/4L6E','users-1638929272295.png','0000-00-00 00:00:00',NULL,NULL),(9,'prueba','prueba','prueba@prueba.com','$2a$10$TDmw31o0ppJ.Hcz2ZekUPe8cvmn/jqjY4wzKXHQZmJW','users-1638929335183.png','0000-00-00 00:00:00',NULL,NULL);
+INSERT INTO `users` VALUES (6,'Matias','Dopazo','Mati@dopazo.com','$2a$10$BspeySPDaLnWiDlE4LV49.nxqQVnX2HDHBAIrujmjEY','users-1638929216797.png',1,'0000-00-00 00:00:00',NULL,NULL),(7,'Bautista','Iorfi','bauti@iorfi.com','$2a$10$2GcUQ/gUdzIsYCUJLn0jT.ICIodS.Vd65d.IeLskgJz','users-1638929247222.png',0,'0000-00-00 00:00:00',NULL,NULL),(8,'Juan','Tuso','juan@tuso.com','$2a$10$I0fmARiEUxykGUfaPPBqieATeSHXwiKfLG4BBz/4L6E','users-1638929272295.png',0,'0000-00-00 00:00:00',NULL,NULL),(9,'prueba','prueba','prueba@prueba.com','$2a$10$TDmw31o0ppJ.Hcz2ZekUPe8cvmn/jqjY4wzKXHQZmJW','users-1638929335183.png',0,'0000-00-00 00:00:00',NULL,NULL),(10,'jose','jose perez','jose@perez.com','$2a$10$ZYsl8o9KYyjYRNvLsuzaCOyUmUhQbrGAMA/VMgxDszV','users-1639096703668.png',0,'0000-00-00 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-07 23:14:19
+-- Dump completed on 2021-12-09 22:51:31

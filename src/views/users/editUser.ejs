@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Edita tu perfil - Cuchi Toys</title>
+    <%- include ("../partials/head") %>
+</head>
+<body>
+
+    <%- include ("../partials/header") %>
+
+    <main class="registro">
+
+        <h1>Editar perfil</h1>
+
+    <div class="registroCompleto">
+
+        <form action="/users/registro" method="POST" enctype="multipart/form-data">
+        <div class="registroNombre">
+            <div class="nombre">Nombre: </div>
+            <label for="AlmacenarNombre"></label>
+            <input  type="text" id="AlmacenarNombre">
+        </div>
+
+        <% if (locals.errors && errors.first_name) { %>
+            <div class="text-danger"> 
+                <%= errors.first_name.msg %>
+            </div>
+            <% } %>
+
+        <div class="registroNombre">
+            <div class="nombre">Nombre de Usuario: </div>
+            <label for="AlmacenarNombre"></label>
+            <input  type="text" id="AlmacenarNombre" >
+        </div>
+
+        <% if (locals.errors && errors.user_name) { %>
+        <div class="text-danger"> 
+            <%= errors.user_name.msg %>
+        </div>
+        <% } %>
+
+        <div class="registroEmail">
+            <div class="email">Email: </div>
+            <label for="AlmacenarEmail"></label>
+            <input type="email" id="AlmacenarEmail">
+        </div>
+
+        <% if (locals.errors && errors.email) { %>
+            <div class="text-danger"> 
+                <%= errors.email.msg %>
+            </div>
+            <% } %>
+        
+       
+        <div class="registroContraseña">
+            <div class="contraseña">Nueva Contraseña: </div>
+            <label for="AlmacenarContraseña"></label>
+            <input type="password" id="AlmacenarContraseña" name="password" >
+        </div>
+        
+        <% if (locals.errors && errors.password) { %>
+            <div class="text-danger"> 
+                <%= errors.password.msg %>
+            </div>
+            <% } %>
+
+        <div class="registroContraseñax2">
+            <div class="contraseñax2">Repetir nueva contraseña: </div>
+            <label for="AlmacenarContraseñax2"></label>
+            <input type="password" id="AlmacenarContraseñax2" name="password2" >
+        </div>
+
+        <% if (locals.errors && errors.password2) { %>
+            <div class="text-danger"> 
+                <%= errors.password2.msg %>
+            </div>
+            <% } %>
+
+        <div class="registroAvatar">
+            <div class="avatar">Carga tu nuevo avatar: </div>
+            <label ></label>
+            <input type="file" id="avatar" name="avatar"  >
+            <% if (locals.errors && errors.avatar) { %>
+                <div class="text-danger"> 
+                    <%= errors.avatar.msg %>
+                </div>
+                <% } %>
+    
+        </div>
+
+        <button class="botonCuenta" type="submit" >Editar perfil</button>      
+          
+        </form>
+        <div class="yaTenesCuenta">¿Ya tenés cuenta?<a href="/users/login">Iniciá sesión</a></div>
+        
+    </div>
+    </main>
+  
+    <%- include ("../partials/footer") %>
+
+</body>
+</html> 
