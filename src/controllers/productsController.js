@@ -46,7 +46,7 @@ const productsControlador = {
             include: [{association: "categories"}, {association: "products_id"}]
         })
             .then (function(producto) {
-            res.render ("products/detalleDeProducto"), {producto:producto}  
+            res.render ("products/detalleDeProducto", {producto:producto}) 
             })
     },
 

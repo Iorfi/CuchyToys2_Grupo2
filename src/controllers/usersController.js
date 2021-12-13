@@ -16,27 +16,41 @@ const usersController ={
     registro: (req,res)=>{res.render('users/registro')},
 
     registerProcess: (req,res)=>{ 
-        
-        // FALTA CHEQUEAR SI EL MAIL Y EL NOMBRE DE USUARIO INGRESADOS YA EXISTEN
-
-        const resultValidation = validationResult(req);
-        console.log(resultValidation);
-        if (resultValidation.errors.length > 0) {
+        db.Users.findOne(
+            {
+                where:
+                {
+                    email:req.body.email
+                }
+            })
+        .then(function(usuario){ 
+            if (usuario==null){
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render ("users/registro", {errors: resultValidation.mapped(),oldData: req.body})
+            } 
+               else {
+                   
+                db.Users.create ({   
+                        NAME:     req.body.first_name,
+                        USERNAME: req.body.user_name,
+                        EMAIL:    req.body.email,
+                        PASSWORD: bcryptjs.hashSync(req.body.password, 10),
+                        AVATAR:   req.file.filename,
+                    })
+                return res.redirect ("/users/login")
+            }
+            }
+        else{
             return res.render ("users/registro", {
-                errors: resultValidation.mapped(),
+                errors: {email:  {msg: 'Este mail ya esta registrado'}},
                 oldData: req.body
-           })} else {
-               
-            db.Users.create ( 
-                {   NAME:     req.body.first_name,
-                    USERNAME: req.body.user_name,
-                    EMAIL:    req.body.email,
-                    PASSWORD: bcryptjs.hashSync(req.body.password, 10),
-                    AVATAR:   req.file.filename,
-                })
-            res.redirect ("/users/login")
+           });
+         }
         }
-           },
+
+        // FALTA CHEQUEAR SI EL MAIL Y EL NOMBRE DE USUARIO INGRESADOS YA EXISTEN
+        )},
     
     /* {
         const resultValidation = validationResult(req);
@@ -77,9 +91,9 @@ const usersController ={
         db.Users.findOne({where:{email:req.body.email}
         })
         .then(function(usuario){ if (usuario!=null){
-                /* let isOkThePassword = bcryptjs.compareSync(req.body.password, usuario.PASSWORD) */
-                /* FALTA IMPLEMENTAR BYSCRIPT */
-                let isOkThePassword = req.body.password==usuario.PASSWORD
+            console.log(req.body.password)
+            console.log(usuario.PASSWORD)
+                 let isOkThePassword = bcryptjs.compareSync(req.body.password, usuario.PASSWORD)   
                 if(isOkThePassword){
                     req.session.userLogged =usuario
                     return res.redirect('/users/perfil')
