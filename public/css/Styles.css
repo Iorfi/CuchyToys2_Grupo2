@@ -1092,6 +1092,7 @@ width: 70%;
 
 .formularioCarga .contFormA label{
     width: 40%;
+    margin-bottom: 10px;
     }
 
 .formularioCarga .desc{
@@ -1211,6 +1212,7 @@ width: 70%;
 
 .formularioEdicion .contFormA label{
     width: 40%;
+    padding-left: 15px;
     }
 
 .formularioEdicion .desc{
@@ -1570,4 +1572,34 @@ background-color: #e2b399;
             box-shadow: 0px 0px 10px rgb(100, 100, 100);
         }
     
+    }
+    .categoriasDeJuguetes .subcategories{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    .categoriasDeJuguetes .subcategories h3{
+        margin-bottom: 10px;
+        margin-top: 15px;
+        color: #CB997E;
+        
+    }
+
+    .categoriasDeJuguetes .subcategories .contNavA {
+        text-decoration: none;
+        color: #CB997E;
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 20px;
+        text-align: left;
+        padding-left: 15px;
+    }
+    .categoriasDeJuguetes .subcategories .lineaHorizontal {
+        width: 100%;
+        height: 3px;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 10px;
     }
