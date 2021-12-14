@@ -16,6 +16,8 @@ const usersController ={
     registro: (req,res)=>{res.render('users/registro')},
 
     registerProcess: (req,res)=>{ 
+       const contra = bcryptjs.hashSync(req.body.password, 10)
+       console.log(contra)
         db.Users.findOne(
             {
                 where:
@@ -87,13 +89,15 @@ const usersController ={
         // HAY QUE RECUPERAR LA INFO DE LOS CAMPOS DE LAS COLUMNAS DE LA BASE DE DATOS Y COMPARARLAS CON LOS INGRESADOS (no esta hecho)
 
     loginProcess: (req, res) => {
-
+             
         db.Users.findOne({where:{email:req.body.email}
         })
         .then(function(usuario){ if (usuario!=null){
+            console.log(req.body.password)
+            console.log(usuario.PASSWORD)
                 let isOkThePassword = bcryptjs.compareSync(req.body.password, usuario.PASSWORD)
                 if(isOkThePassword){
-                    req.session.userLogged =usuario
+                    req.session.userLogged = usuario
                     return res.redirect('/users/perfil')
                 }
     

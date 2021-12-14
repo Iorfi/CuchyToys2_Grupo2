@@ -15,18 +15,14 @@ const productsControlador = {
         let porductosAMostrar =[]
         if(req.params.cat != undefined){
             
-            let productosFiltrados = []
-            db.Products.findAll()
+           
+            db.Products.findAll({where:{CATEGORY_ID: req.params.cat}})
             .then(function(products){
-                products.forEach(prod => {
-                    if(prod.category.toLowerCase() == req.params.cat.toLowerCase()  ){
-                        productosFiltrados.push(prod)
-                    }
-                })
+                let porductosAMostrar = products
+                return res.render('products/categoriasDeJuguetes',{products: porductosAMostrar})
             })
             
-            
-            porductosAMostrar = productosFiltrados
+
         }
         else{
             db.Products.findAll()

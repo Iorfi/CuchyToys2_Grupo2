@@ -76,54 +76,38 @@
 
                 <div class="nav-body" >  
                         <div class = "circuloSeparadorA"> </div> 
-                        <a href = "" class = "contNavA"> <h4> Juguetes destacados </h4> </a>
+                        <a href = "/" class = "contNavA"> <h4> Juguetes destacados </h4> </a>
                         <div class = "circuloSeparadorA"> </div>
-                        <a href = "" class = "contrNavA"> <h4> Ofertas </h4> </a>
+                        <a href = "/oferta" class = "contrNavA"> <h4> Ofertas </h4> </a>
                         <div class = "circuloSeparadorA"> </div>
                         <a href = "" class = "contNavB"> <h4> Envios </h4> </a>
                 </DIV> 
             
                 <!-- Section Articles -->
-                    <section>
+                <section>
                         <div class="products">
-                            <article>
-                                <img src="https://i.pinimg.com/564x/a2/7b/10/a27b10e014d0641c145b70eacbd92294.jpg" alt="jueguetes didácticos de tela" class="product_img">
-                                <div class="main-article">
-                                    <i class="fas fa-truck"></i>
-                                    <p class="price">$6.770</p>
-                                    <p class="discount">40% off</p>
-                                    <h4 class="description">jueguetes didácticos de tela</h4>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="https://i.pinimg.com/564x/7b/cd/14/7bcd140542958bc0a2c4f70713b5961a.jpg" alt="juguetes de fieltro para bebes" class="product_img">
-                                <div class="main-article">
-                                    <i class="fas fa-truck"></i>
-                                    <p class="price">$230.000</p>
-                                    <p class="discount">20% off</p>
-                                    <h4 class="description">juguetes de fieltro para bebes</h4>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="https://i.pinimg.com/564x/b6/17/e5/b617e54df0c0acbd4baf2df38814619a.jpg" alt="Tobogán de pelotas" class="product_img">
-                                <div class="main-article">
-                                    <i class="fas fa-truck"></i>
-                                    <p class="price">$70.500</p>
-                                    <p class="discount">10% off</p>
-                                    <h4 class="description">Tobogán de pelotas</h4>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="https://i.pinimg.com/564x/69/6d/0d/696d0d1de2b09833e616d06805075f50.jpg" alt="Minijuguetes" class="product_img">
-                                <div class="main-article">
-                                    <i class="fas fa-truck"></i>
-                                    <p class="price">$23.200</p>
-                                    <p class="discount">5% off</p>
-                                    <h4 class="description">Minijuguetes</h4>
-                                </div>
-                            </article>
+                                <% for (i = 0 ; i < products.length ; i++) { %>
+                                    <div class = "prodPart">
+                                            <div class = "prodPartA">
+                                                <a href="/products/detalleDeProducto/<%-products[i].ID%>">  </a>
+                                                <img src="/images/products/<%-products[i].IMAGE%>" class="product_img">
+                                            </div>
+                                            <div class = "prodPartB">
+                                                <i class="fas fa-truck"></i>
+                                                <p class= "information"><%-products[i].NAME %></p>
+                                                <p class="price">$<%-products[i].PRICE %></p>
+                                                <% if(products[i].DISCOUNT != null ) {%>
+                                                <p class="discount"><%-products[i].DISCOUNT %>% off</p> 
+                                                <% }%>
+                                                <h4 class= "information"><%-products[i].DESCRIPTION %></h4>
+                                            </div>
+                                    </div>
+
+                                <% } %>
+                            
                         </div>  
                     </section>
+                    
     </main>
 
     <%- include ("./partials/footer") %>
