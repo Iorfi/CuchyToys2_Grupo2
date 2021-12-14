@@ -6,14 +6,21 @@
 </head>
 <body>
     <%- include ("../partials/header.ejs") %>
-  <main>
+  <main class = "perfil">
     <div class = perfilContMainA>
       <img class= perfilImagen src="/images/users/<%= user.AVATAR%>">
       <div class = perfilContMainAA>
-        <h1 class = perfilH1> Hola de nuevo, <%=user.NAME %></h1>
+        <h1 > Hola de nuevo, <%=user.NAME %></h1>
         <p><%=user.EMAIL%></p>
     </div>
-    <a href="/users/editUser">editar usuario</a>
+    <form class = perfilContMainAB>
+      <button class = "botonEditarUsuarioA"> <a href="/admin/formularioCarga">Crear Producto</a> </button>
+  </form>
+  <form class = perfilContMainAC>
+    <button class = "botonEditarUsuarioB"> <a href="/users/editUser">editar usuario</a> </button>
+</form>
+</div>
+   
   </main>
 
   <%- include ("../partials/footer") %>
