@@ -90,7 +90,7 @@ const usersController ={
              
         db.Users.findOne({where:{email:req.body.email}
         })
-        .then(function(usuario){ if (usuario!=null){
+        .then(function(usuario){ if (usuario!=null){   
                 let isOkThePassword = bcryptjs.compareSync(req.body.password, usuario.PASSWORD)
                 if(isOkThePassword){
                     req.session.userLogged = usuario
@@ -98,12 +98,16 @@ const usersController ={
                 }
     
                 return res.render("users/login", {
-                    errors: {email: {msg: "Las credenciales es invalidas"}}
+                    errors: {email: {msg: "Las credenciales son invalidas"}}
                 })
     
+                
             }
-     
-            return res.render("users/Login", {
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render ("users/login", {errors: resultValidation.mapped(),oldData: req.body})
+            } 
+            return res.render("users/login", {
                 errors: {email: {msg: "No se encuentra este email en nuestra base de datos"}},
                 oldData: req.body
             })

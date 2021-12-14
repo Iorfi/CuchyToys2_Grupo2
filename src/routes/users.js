@@ -27,12 +27,12 @@ const authMiddleware = require('../middlewares/authMiddleware')
 //Express Validator
 const { body } = require ("express-validator")
 
-const validations = [    
-    body("first_name").notEmpty() .withMessage("Tienes que escribir un nombre"), 
+const validationsRegistro = [    
+    body("first_name").notEmpty() .withMessage("Tienes que escribir un nombre").isLength({min:2}), 
     // body("last_name").notEmpty().withMessage("Tienes que escribir un apellido"),
-    body("email").notEmpty() .withMessage("Tienes que escribir un email").bail() .isEmail().withMessage("Debes escribir un formato de correo electrónico válido"), 
+    body("email").notEmpty() .withMessage("Tienes que escribir un email").bail().isEmail().withMessage("Debes escribir un formato de correo electrónico válido"), 
     // body("telefono").notEmpty() .withMessage("Tienes que escribir un teléfono"), 
-    body("password").notEmpty() .withMessage("Tienes que escribir una contraseña"), 
+    body("password").notEmpty() .withMessage("Tienes que escribir una contraseña con minimo 8 caracteres").isLength({min:8}), 
     body("password2").custom ((value, { req }) => {
         if (req.body.password !== req.body.password2) {
             throw new Error("La contraseña no coincide con la primera ingresada");
@@ -41,7 +41,7 @@ const validations = [
     }),
     body("avatar").custom ((value, { req }) => {
         let file = req.file;
-        let acceptedExtensions = [".jpg", ".png", ".gif"]
+        let acceptedExtensions = [".jpg",".jpeg" ,".png", ".gif"]
 
         if (!file) {
             throw new Error("Tienes que subir una imagen");
@@ -54,6 +54,12 @@ const validations = [
     })
 ]
 
+const validationsLogin = [
+    body("email").notEmpty() .withMessage("Tienes que escribir un email").bail().isEmail().withMessage("Debes escribir un formato de correo electrónico válido"), 
+    // body("telefono").notEmpty() .withMessage("Tienes que escribir un teléfono"), 
+    body("password").notEmpty().withMessage("Tienes que escribir una contraseña"),
+]
+
 
 
 //formulario de registro
@@ -64,7 +70,7 @@ router.get('/login', GuestMiddleware,usersController.login)
 router.get('/perfil',authMiddleware,usersController.perfil)
 
 router.get('/editUser',usersController.editUser)
-router.put('/editUser',uploadFile.single("avatar"), validations,usersController.editProcess)
+router.put('/editUser',uploadFile.single("avatar"), validationsRegistro,usersController.editProcess)
 
 
 
@@ -80,8 +86,8 @@ router.get('/preguntasFrecuentes', usersController.preguntasFrecuentes)
  
 
 // proceso de login
-router.post('/login', usersController.loginProcess)
+router.post('/login', validationsLogin,usersController.loginProcess)
 //procesar registro
-router.post('/registro',uploadFile.single("avatar"), validations ,usersController.registerProcess)
+router.post('/registro',uploadFile.single("avatar"), validationsRegistro ,usersController.registerProcess)
 
 module.exports = router;

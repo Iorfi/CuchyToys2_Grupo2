@@ -3,6 +3,8 @@ const adminController = require('../controllers/adminController');
 const router = express.Router()
 const multer = require('multer');
 const path = require('path');
+const adminMiddleware = require("../middlewares/adminMiddleware")
+
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -17,15 +19,34 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+const { body } = require("express-validator")
+const validations = [
+    body("name").notEmpty().withMessage("el nombre debe terner al menos 5 caracteres y no puede estar vacio").isLength({min:5}), 
+    body("description").notEmpty().withMessage("Debe tener al menos 20 caracteres").isLength({min:20}),
+    body("image").custom ((value, { req }) => {
+        let file = req.file;
+        let acceptedExtensions = [".jpg",".jpeg" ,".png", ".gif"]
+
+        if (!file) {
+            throw new Error("Tienes que subir una imagen");
+        } else {
+        let fileExtension =  path.extname(file.originalname);
+        if (!acceptedExtensions.includes(fileExtension)) {
+            throw new Error(`Las extenciones de archivo permitidas son .jpg, .png y gif`);
+        }}
+        return true;
+    })
+]
+
 
 
 
 /*** EDIT ONE PRODUCT ***/ 
-router.get('/formularioEdicion/:id', adminController.edicion)
-router.put('/formularioEdicion/:id',upload.single('product-image'), adminController.update); 
+router.get('/formularioEdicion/:id',adminMiddleware, adminController.edicion)
+router.put('/formularioEdicion/:id',upload.single('image'),validations ,adminController.update); 
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/formularioCarga', adminController.create); 
-router.post('/', upload.single('product-image'), adminController.store); 
+router.get('/formularioCarga',adminMiddleware, adminController.create); 
+router.post('/', upload.single('image'), validations,adminController.store); 
 
 module.exports = router;

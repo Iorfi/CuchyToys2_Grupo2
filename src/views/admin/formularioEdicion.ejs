@@ -17,10 +17,13 @@
                     
     
                     <div class="lineaHorizontal"></div>
-        
                     <label class="titulos"  for="name">Nuevo nombre: </label>
                     <input type="text" id="fileImagen" name="name" value="<%-producto.NAME %>">
-
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="text-danger"> 
+                            <%= errors.name.msg %>
+                        </div>
+                        <% } %>
                     <div class="lineaHorizontal"></div>
 
                     <label class="titulos" for="category">¿En que categoría se encuentra tu producto?</label>
@@ -33,7 +36,7 @@
                         <input type="radio" id="category" value= "3"name="category">
     
                     </div>
-    
+                   
                     <div class="lineaHorizontal"></div>
                   
                     <label class="titulos" for="subcategory">¿En que subcategoría se encuentra tu producto?</label>
@@ -47,6 +50,7 @@
                     <label for= "category"> Granja</label>
                     <input type="radio" id="subcategory" value= "4"name="subcategory">
                     </div>
+                   
                 <div class="lineaHorizontal"></div>
               
                     <label class="titulos"  for="Email">¿Quieres que se encuentre destacada?</label>
@@ -56,13 +60,18 @@
                     <label for= "unidad">No</label>
                     <input type="radio" id="formatoVenta" value= "0"name="destacado">
                 </div>
-
+             
 
                 <div class="lineaHorizontal"></div>
 
                     <label class="titulos"  for="Email">Agregá algunas fotos de tu producto!</label>
-                    <input type="file" name="product-image" id="product-image">
+                    <input type="file" name="image" id="product-image">
 
+                    <% if (locals.errors && errors.image) { %>
+                        <div class="text-danger"> 
+                            <%= errors.image.msg %>
+                        </div>
+                        <% } %>
                 <div class="lineaHorizontal"></div>      
 
                     <label class="titulos"  for="price">Define el precio del producto</label>
@@ -73,11 +82,16 @@
                 <label class="titulos"  for="discount">¿Ofeces descuento?</label>
                 <input type="textarea" id="discount" name="discount"value="<%-producto.DISCOUNT %>" >
                 
+              
                 <div class="lineaHorizontal"></div>
                                                     
                     <label class="titulos"  for="Email">¿Querés agregar una descripción?</label>
                     <input class="desc" type="textarea" name="descripcion" value="<%-producto.DESCRIPTION %>" >  
-
+                    <% if (locals.errors && errors.descripcion) { %>
+                        <div class="text-danger"> 
+                            <%= errors.descripcion.msg %>
+                        </div>
+                        <% } %>
                     <button class="publicar" type="submit" >editar</button> 
         </form>
     </main>

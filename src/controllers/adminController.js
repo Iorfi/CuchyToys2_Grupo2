@@ -4,6 +4,7 @@ const productsFilePath = path.join(__dirname, '../data/productos.json');
 const { v4: uuidv4 } = require('uuid');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'))
 const db = require ("../../database/models")
+const { validationResult } = require("express-validator");
 
 const adminController ={
 
@@ -19,7 +20,14 @@ const adminController ={
         },
 
         update: (req,res)=>{
-            db.Products.update({
+            db.Products.findByPk(req.params.id)
+            .then(function(prod){
+                const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render ("admin/formularioEdicion", {errors: resultValidation.mapped(),oldData: req.body,producto:prod})
+            }   
+            })
+            .then(function(){db.Products.update({
 
                 NAME: req.body.name ,
                 PRICE: req.body.price ,
@@ -34,7 +42,11 @@ const adminController ={
                         ID: req.params.id
                      }
                     })
-            return res.redirect("/products/detalleDeProducto/" + req.params.id)
+                return res.redirect("/products/detalleDeProducto/" + req.params.id) 
+                })
+                        
+ 
+           
         }, 
     
         // Create - Form to create
@@ -46,6 +58,10 @@ const adminController ={
 
 
         store: (req, res) => {
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render ("admin/formularioCarga", {errors: resultValidation.mapped(),oldData: req.body})
+            }   
         db.Products.create({
             NAME: req.body.name ,
             PRICE: req.body.price ,
