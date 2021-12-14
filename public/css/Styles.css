@@ -1566,8 +1566,10 @@ background-color: #e2b399;
 
 
     .categoriasDeJuguetes .prodPart{
-        width: 30%;
+        width: 25%;
         background-color: #EDDCD2;
+        margin-left: 5px;
+        margin-right: 5px;
         margin-top: 20px;
         margin-bottom: 20px;
         display: flex;
@@ -1581,12 +1583,8 @@ background-color: #e2b399;
     }
     
 
-    .categoriasDeJuguetes img{
+    .categoriasDeJuguetes .prodPartA img{
         object-fit: cover;
-        width: 100%;
-    }
-
-    .categoriasDeJuguetes .products{
         width: 100%;
     }
 
@@ -1614,6 +1612,7 @@ background-color: #e2b399;
         display: flex;
         flex-direction: column;
         text-align: center;
+        width: 2000px;
 
     }
 
@@ -1665,13 +1664,13 @@ background-color: #e2b399;
     .perfil .perfilContMainAC{
         width: 20%;
     }
-    .perfil .botonEditarUsuarioA a, .botonEditarUsuarioB a{
+    .perfil .botonEditarUsuarioA a, .botonEditarUsuarioB a, .botonEditarUsuarioC a{
         text-decoration: none;
         font-size: 20px;
         font-weight: bold;
         color: rgb(255, 136, 0);
     }
-    .perfil .botonEditarUsuarioA, .botonEditarUsuarioB{
+    .perfil .botonEditarUsuarioA, .botonEditarUsuarioB, .botonEditarUsuarioC{
         background-color: #EDDCD2;
         height: 150px;
         width: 150px;
@@ -1686,6 +1685,15 @@ background-color: #e2b399;
     .perfil .botonEditarUsuarioA a{
         color: rgb(110, 167, 93);
     }
+    .detalleDeProducto .botonEditarUsuarioC{
+        border-color: rgb(255, 0, 0);
+        background-color: rgb(241, 182, 163);
+        margin-left: 40px;
+    }
+    .detalleDeProducto .botonEditarUsuarioC a{
+        color: red;
+    }
+
 
     /*------------------------------------- Formulario de Contacto -------------------------------------------------*/
     /*--------------------------------------------------------------------------------------------------------------------*/
@@ -1736,4 +1744,50 @@ background-color: #e2b399;
         align-items: center;
         justify-content: space-around;
     }
+
+   /*------------------------------------- Productos del Home -------------------------------------------------*/
+    /*--------------------------------------------------------------------------------------------------------------------*/ 
+ .prodPart{
+    width: 30%;
+    background-color: #EDDCD2;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction:column ;
+}
+ .prodPartB{
+    background-color: #EDDCD2;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.prodPartA img{
+    object-fit: cover;
+    width: 100%;
+}
+
+ .products{
+    width: 100%;
+}
+
+ .information{
+  display: none;
+    
+}
+@media (min-width: 768px){
+     .prodPart{
+        color:#EDDCD2;
+        transition: color .5s;
+        
+    }
+     .information{
+        display: block;  
+      }
+
+     .prodPart:hover{
+        color:#CB997E;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+}
 

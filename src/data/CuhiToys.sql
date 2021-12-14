@@ -67,7 +67,7 @@ CREATE TABLE `product` (
   KEY `product_FK_1` (`SUBCATEGORY_ID`),
   CONSTRAINT `product_FK` FOREIGN KEY (`CATEGORY_ID`) REFERENCES `categories` (`ID`),
   CONSTRAINT `product_FK_1` FOREIGN KEY (`SUBCATEGORY_ID`) REFERENCES `subcategories` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,7 +76,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (2,'Memotest Graja','180','Recuerda y venceras','c40f40ee97c6678e7f426a5c8895c1b1.jpg',1,4,1,NULL,'2021-12-06 00:00:01',NULL,NULL),(3,'Escribiendo Números Mar','250','Aprendiendo a escribir números','descarga.jfif',3,3,1,NULL,'2021-12-06 00:00:01',NULL,NULL),(4,'Leo y Escribo Bosque','370','Leo y Escribo jojojo','LEO-Y-ESCRIBO-PORTADA.jpg',2,1,0,10,'2021-12-06 00:00:01',NULL,NULL),(5,'A seguir la linea! Mar','450','Vamos a seguir la linea!!','13728529_1062315260528054_456195555_o.jfif',3,3,1,NULL,'2021-12-06 00:00:01',NULL,NULL),(6,'Cartas','200','Grandes cartas de truco para disfrutar en familia y con amigos ambientadas en la selva para que su hijo al jugar aprenda sobre animales.','product-1639451258373.png',1,2,0,10,'0000-00-00 00:00:00',NULL,NULL),(7,'Cubo rubik','1000','Gran juguete para aprender a resolver.','product-1639451436205.png',1,1,0,10,'0000-00-00 00:00:00',NULL,NULL);
+INSERT INTO `product` VALUES (2,'Memotest Graja','180','Recuerda y venceras','c40f40ee97c6678e7f426a5c8895c1b1.jpg',1,4,1,NULL,'2021-12-06 00:00:01',NULL,NULL),(3,'Escribiendo Números Mar','250','Aprendiendo a escribir números','descarga.jfif',3,3,1,NULL,'2021-12-06 00:00:01',NULL,NULL),(4,'Leo y Escribo Bosque','370','Leo y Escribo jojojo','LEO-Y-ESCRIBO-PORTADA.jpg',2,1,0,10,'2021-12-06 00:00:01',NULL,NULL),(5,'A seguir la linea! Mar','450','Vamos a seguir la linea!!','13728529_1062315260528054_456195555_o.jfif',3,3,1,NULL,'2021-12-06 00:00:01',NULL,NULL),(7,'Cubo rubik','1000','Gran juguete para aprender a resolver.','product-1639451436205.png',1,1,0,10,'0000-00-00 00:00:00',NULL,NULL),(8,'Osito para colorear','1200','Diviértete coloreando estas figuras!','product-1639523278455.jpg',3,1,0,0,'0000-00-00 00:00:00',NULL,NULL),(9,'Abecedario de madera','600','Aprende mientras juegas con tu Abecedario!','product-1639523371911.jpg',3,2,0,10,'0000-00-00 00:00:00',NULL,NULL),(10,'Stencil Didáctico','1000','Stencil Didáctico con soporte!','product-1639523437912.jpg',3,3,0,15,'0000-00-00 00:00:00',NULL,NULL),(11,'Números coloridos','1200','Aprende los números de una manera divertida!','product-1639523615985.jpg',3,3,0,10,'0000-00-00 00:00:00',NULL,NULL),(12,'Letras con código Braile','750','Aprende Braile de manera divertida!','product-1639523778790.jpg',2,3,0,10,'0000-00-00 00:00:00',NULL,NULL),(13,'Cartas con Letras','1200','Aprende a escribir las letras en cursiva!','product-1639523833482.jpg',2,3,0,15,'0000-00-00 00:00:00',NULL,NULL),(15,'Valija de juguetes','1200','Pasa un buen rato y aprende!','product-1639523986095.jpg',1,4,0,10,'0000-00-00 00:00:00',NULL,NULL),(16,'Marcadores','1200','Dibuja de la mejor manera!','product-1639524041421.jpg',2,3,0,10,'0000-00-00 00:00:00',NULL,NULL),(17,'Sopa de Letras','900','Encuentra las frutas mas ricas!','product-1639524121368.jpg',2,2,0,10,'0000-00-00 00:00:00',NULL,NULL),(18,'Pizarra','750','Divertite con una pizarra enorme!','product-1639524226747.jpg',2,3,0,10,'0000-00-00 00:00:00',NULL,NULL),(19,'Cuidado con la Torta','1500','Ten cuidado con la torta!','product-1639524284425.jpg',1,4,0,0,'0000-00-00 00:00:00',NULL,NULL),(20,'Twister','2000','El clásico que todos conocemos!','product-1639524333702.jpg',1,2,0,15,'0000-00-00 00:00:00',NULL,NULL),(21,'Mentiroso','1000','no mientas porque perderás!','product-1639524369614.jpg',1,2,0,10,'0000-00-00 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-14 16:20:19
+-- Dump completed on 2021-12-14 20:42:41
