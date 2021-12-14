@@ -11,6 +11,10 @@ const User = require("../models/User")
 
 const usersController ={
 
+    contacto: (req,res)=>{res.render('users/contacto')},
+
+    quienesSomos: (req,res)=>{res.render('users/quienesSomos')},
+    
     comoComprar: (req,res)=>{res.render('users/comoComprar')},
 
     registro: (req,res)=>{res.render('users/registro')},

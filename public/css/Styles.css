@@ -46,6 +46,14 @@
 .contHeaderA img {
     height: 50px;
     width: 50px;
+    transition: color .5s;
+}
+
+.contHeaderA img:hover{
+    background-color: rgb(230, 215, 196);
+    color:#CB997E;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border-radius: 50%;
 }
 
 /* Diseño del Contenedor de la barra de búsqueda del Header*/
@@ -89,7 +97,16 @@
 .contHeaderC img {
     height: 25px;
     width: 25px;
+    transition: color .5s;
 }
+
+.contHeaderC img:hover{
+    background-color: rgb(230, 215, 196);
+    color:#CB997E;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border-radius: 50%;
+}
+
 
 .contHeaderDloged {
     width: 10%;
@@ -138,6 +155,14 @@ padding-left: 5%;
 .contHeaderD img {
     height: 25px;
     width: 25px;
+    transition: color .5s;
+}
+
+.contHeaderD img:hover{
+    background-color: rgb(230, 215, 196);
+    color:#CB997E;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border-radius: 50%;
 }
 
 .contHeaderD p {
@@ -157,6 +182,18 @@ padding-left: 5%;
     padding-bottom: 5px;
     background-color:#EDDCD2;
     align-items: center;
+}
+
+.contenedorNav .contNavB {
+    transition: color .5s;
+    width: 18%;
+    text-align: center;
+}
+
+.contenedorNav .contNavB:hover{
+    background-color: rgb(230, 215, 196);
+    color:#CB997E;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 /* opciones del nav que se ven cuando estas en 768px*/
@@ -1648,5 +1685,55 @@ background-color: #e2b399;
     }
     .perfil .botonEditarUsuarioA a{
         color: rgb(110, 167, 93);
+    }
+
+    /*------------------------------------- Formulario de Contacto -------------------------------------------------*/
+    /*--------------------------------------------------------------------------------------------------------------------*/
+
+    .contacto{
+        color:#CB997E;
+    }
+    .contacto .titulo{
+        padding: 2%;
+        font-weight:bold;
+        text-align: center;
+    }
+    .contacto p{
+        padding: 1%;
+        margin-bottom: 1vh;
+        text-align: center;
+    }
+    .contacto .contenedorPreguntas img{
+        width: 30px;
+        height: 30px;
+        margin-right: 15px;
+    }
+    .contacto .preguntas{
+        font-weight: bold;
+        margin-bottom: 1vh;
+        color: #CB997E;
+        text-align: center;
+    }
+    @media (min-width: 576px){
+        .contacto {
+            width: 60vw;
+        }
+    }
+    @media (min-width: 1200px){
+        .contacto {
+            width: 70vw;
+        }
+    }
+
+    .imgQS{
+        width: 150px;
+        height: 150px;
+        margin-left: 10px;
+    }
+    
+    .contQS {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     }
 

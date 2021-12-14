@@ -79,8 +79,12 @@ router.put('/editUser',uploadFile.single("avatar"), validationsRegistro,usersCon
 router.get('/logout',usersController.logout)
 //pagina como comprar
 router.get('/comoComprar', usersController.comoComprar)
+//pagina contacto
+router.get('/contacto', usersController.contacto)
 //pagina preguntas frecuentes
 router.get('/preguntasFrecuentes', usersController.preguntasFrecuentes)
+//pagina Quienes Somos
+router.get('/quienesSomos', usersController.quienesSomos)
 
 //router.get('/profile/:userId',authMiddleware,usersController.profile)
  
