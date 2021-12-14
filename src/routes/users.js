@@ -63,7 +63,8 @@ router.get('/login', GuestMiddleware,usersController.login)
 
 router.get('/perfil',authMiddleware,usersController.perfil)
 
-router.get('/editUser',usersController.perfil)
+router.get('/editUser',usersController.editUser)
+router.put('/editUser',uploadFile.single("avatar"), validations,usersController.editProcess)
 
 
 

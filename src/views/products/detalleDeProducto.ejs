@@ -54,13 +54,15 @@
             </div>
         
                 <div class="detalleProducto"> Descripcion del producto: <br>  <br> <%-products.DESCRIPTION%> </div>  
-
+                <% if (admin){ %>
                 <div class="botones"> 
                     <a href="/admin/formularioEdicion/<%= products.ID %>" class="botonesA"> EDITAR </a>
                     <form class="botonesB" action= "/products/detalleDeProducto/<%= products.ID %>?_method=DELETE" method = "POST"> 
                         <button type="submit">Eliminar</button>
-                     </form>
+                    </form>
                 </div>
+                <%   }    %>
+                
             </div>
         </div>
 

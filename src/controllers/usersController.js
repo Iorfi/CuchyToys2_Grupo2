@@ -123,8 +123,30 @@ const usersController ={
     
     preguntasFrecuentes: (req,res)=>{res.render('users/preguntasFrecuentes')}, 
     perfil: (req,res)=>{
-        console.log(req.session.userLogged)
         res.render('users/perfil', {user: req.session.userLogged} )
+    },
+    editUser: (req,res)=>{
+        res.render('users/editUser')
+    },
+    editProcess: (req,res)=>{
+        const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                return res.render ("users/editUser", {errors: resultValidation.mapped(),oldData: req.body})
+            } 
+        const usuario = req.session.userLogged
+        console.log(String(usuario.ID))
+        db.Users.update({
+            NAME: req.body.first_name ,
+            USERNAME: req.body.user_name ,
+            EMAIL: req.body.email ,
+            PASSWORD: bcryptjs.hashSync(req.body.password, 10) ,
+            AVATAR: req.file.filename,
+            }, {
+                where: {
+                    ID: String(usuario.ID)
+                 }
+                })
+        return res.redirect("/users/perfil")
     }
 }
 module.exports = usersController;

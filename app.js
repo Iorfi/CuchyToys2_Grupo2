@@ -11,7 +11,6 @@ const session = require('express-session')
 const userlogged = require('./src/middlewares/userloggedmiddleware')
 
 
-/* SEGUN DIEGO */
 const { Sequelize } = require('sequelize');
 const config = require("./database/config/config")
 console.log(process.env.NODE_ENV)

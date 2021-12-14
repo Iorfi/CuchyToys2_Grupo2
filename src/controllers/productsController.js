@@ -3,16 +3,20 @@ const fs = require('fs');
 const db = require('../../database/models');
 const productsFile = path.join(__dirname, '../data/productos.json')
 const categorysFile = path.join(__dirname, '../data/categorias.json')
+const Op = db.Sequelize.Op
 
 const category = JSON.parse(fs.readFileSync(categorysFile, 'utf-8'))
 
 const productsControlador = {
     gestionDePago: (req,res)=>{res.render('products/gestionDePago')},
 
-    carritoDeCompras: (req,res)=>{res.render('products/carritoDeCompras')},
+    carritoDeCompras: (req,res)=>{
+        console.log(location.href)
+        res.render('products/carritoDeCompras')},
 
     categoriasDeJuguetes: (req,res)=>{ 
-        let porductosAMostrar =[]
+        if(req.query.textoBuscado == undefined){
+            let porductosAMostrar =[]
         if(req.params.cat != undefined){
             
            
@@ -34,6 +38,18 @@ const productsControlador = {
 
             )
         }
+        }
+        else{
+            console.log(req.query.textoBuscado)
+            hola = req.query.textoBuscado
+            db.Products.findAll({where:{NAME: {[Op.like]: `%${hola}%`}}})
+            .then(function(products){
+                let porductosAMostrar = products
+                return res.render('products/categoriasDeJuguetes',{products: porductosAMostrar})
+            })
+        }
+        
+        
         
     },
 
@@ -41,7 +57,7 @@ const productsControlador = {
         db.Products.findByPk(req.params.id)
             .then (function(producto) {
                 console.log(producto)
-            res.render ("products/detalleDeProducto", {products:producto}) 
+            res.render ("products/detalleDeProducto", {products:producto,admin:res.locals.admin}) 
             })
     },
 
