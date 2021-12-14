@@ -154,7 +154,7 @@ CREATE TABLE `users` (
   `MODIFIED_AT` datetime DEFAULT NULL,
   `DELETED_AT` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,7 +163,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (6,'Matias','Dopazo','Mati@dopazo.com','$2a$10$BspeySPDaLnWiDlE4LV49.nxqQVnX2HDHBAIrujmjEY','users-1638929216797.png',1,'2021-10-20 10:10:01',NULL,NULL),(7,'Bautista','Iorfi','bauti@iorfi.com','$2a$10$2GcUQ/gUdzIsYCUJLn0jT.ICIodS.Vd65d.IeLskgJz','users-1638929247222.png',0,'2021-10-20 10:10:01',NULL,NULL),(8,'Juan','Tuso','juan@tuso.com','$2a$10$I0fmARiEUxykGUfaPPBqieATeSHXwiKfLG4BBz/4L6E','users-1638929272295.png',0,'2021-10-20 10:10:01',NULL,NULL),(9,'prueba','prueba','prueba@prueba.com','$2a$10$TDmw31o0ppJ.Hcz2ZekUPe8cvmn/jqjY4wzKXHQZmJW','users-1638929335183.png',0,'2021-10-20 10:10:01',NULL,NULL),(10,'jose','jose perez','jose@perez.com','gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg','users-1639096703668.png',0,'2021-10-20 10:10:01',NULL,NULL),(11,'Matias','Perez','dopa@dopa.com','$2a$10$GAPkZnkSfF13ZF1TKaebnuVR./IO/vgpo11f0sp3EWl','users-1639422443408.png',0,'2021-10-20 10:10:01',NULL,NULL),(12,'Matias','Perezzz','mail@mail.com','$2a$10$44D6WRbVIPB4Tk12y117zOSsWY4YAGrfs99A/grtjly','users-1639425235813.png',0,'2021-10-20 10:10:01',NULL,NULL),(13,'matias','Dopazo','mati.dopazo@gmail.com','$2a$10$oerE7/U.Tu5Hn.6QnheJPuKnJwwY2YppDFI6eEHnVcyI92usR59U2','users-1639450860998.png',0,'0000-00-00 00:00:00',NULL,NULL);
+INSERT INTO `users` VALUES (6,'Matias','Dopazo','Mati@dopazo.com','$2a$10$BspeySPDaLnWiDlE4LV49.nxqQVnX2HDHBAIrujmjEY','users-1638929216797.png',0,'2021-10-20 10:10:01',NULL,NULL),(7,'Bautista','Iorfi','bauti@iorfi.com','$2a$10$2GcUQ/gUdzIsYCUJLn0jT.ICIodS.Vd65d.IeLskgJz','users-1638929247222.png',0,'2021-10-20 10:10:01',NULL,NULL),(8,'Juan','Tuso','juan@tuso.com','$2a$10$I0fmARiEUxykGUfaPPBqieATeSHXwiKfLG4BBz/4L6E','users-1638929272295.png',0,'2021-10-20 10:10:01',NULL,NULL),(9,'prueba','prueba','prueba@prueba.com','$2a$10$TDmw31o0ppJ.Hcz2ZekUPe8cvmn/jqjY4wzKXHQZmJW','users-1638929335183.png',0,'2021-10-20 10:10:01',NULL,NULL),(10,'jose','jose perez','jose@perez.com','gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg','users-1639096703668.png',0,'2021-10-20 10:10:01',NULL,NULL),(11,'Matias','Perez','dopa@dopa.com','$2a$10$GAPkZnkSfF13ZF1TKaebnuVR./IO/vgpo11f0sp3EWl','users-1639422443408.png',0,'2021-10-20 10:10:01',NULL,NULL),(12,'Matias','Perezzz','mail@mail.com','$2a$10$44D6WRbVIPB4Tk12y117zOSsWY4YAGrfs99A/grtjly','users-1639425235813.png',0,'2021-10-20 10:10:01',NULL,NULL),(15,'mati','dopa','mati.dopazo@gmail.com','$2a$10$UpkCpaMmpwefljV.pj1re.Y0b9ac7uR1fEErevPwtjIlq9mKZpOqy','users-1639501777344.jpg',1,'0000-00-00 00:00:00',NULL,NULL),(16,'bautista','perez','bauti@mail.com','$2a$10$Yuc5tRxOJoNJ3fjEfEdCuO.BYoPS78C6uEU6nnwhFkqAgrReIv8YG','users-1639509013840.png',0,'0000-00-00 00:00:00',NULL,NULL),(17,'Bautista','Iorfida','bautistaiorfida@gmail.com','$2a$10$qY5gZo31T9bbsF.nyvIriuKBpDNGZn1Wdvl3ExBCVkHflW6rEAnUS','users-1639509509565.jpg',1,'0000-00-00 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-14  0:25:29
+-- Dump completed on 2021-12-14 16:20:19
