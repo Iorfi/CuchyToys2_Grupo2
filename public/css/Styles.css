@@ -1612,7 +1612,7 @@ background-color: #e2b399;
         display: flex;
         flex-direction: column;
         text-align: center;
-        width: 2000px;
+        width: 20%;
 
     }
 
@@ -1766,9 +1766,10 @@ background-color: #e2b399;
     width: 100%;
 }
 
- .products{
-    width: 100%;
+.productS{
+    width: 80%;
 }
+
 
  .information{
   display: none;
