@@ -9,14 +9,7 @@
     <%- include ("../partials/header") %>
 
     <main class="categoriasDeJuguetes">
-            <!-- Busqueda por destacado o precio -->
-            <div class="destacadoOprecio">
-                <select name="destacado o precio" id="destacadoOprecio">
-                    <option>Más destacado</option>
-                    <option>Menor precio</option>
-                    <option>Mayor precio</option>
-                </select>
-            </div>
+           
             
             <!-- Division de Articles -->
             <div class="main-articles"> 
@@ -38,8 +31,7 @@
                                 <% for (i = 0 ; i < products.length ; i++) { %>
                                     <div class = "prodPart">
                                             <div class = "prodPartA">
-                                                <a href="/products/detalleDeProducto/<%-products[i].ID%>">  </a>
-                                                <img src="/images/products/<%-products[i].IMAGE%>" class="product_img">
+                                                <a href="/products/detalleDeProducto/<%-products[i].ID%>"><img src="/images/products/<%-products[i].IMAGE%>" class="product_img"> </a>
                                             </div>
                                             <div class = "prodPartB">
                                                 <i class="fas fa-truck"></i>

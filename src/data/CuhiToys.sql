@@ -67,7 +67,7 @@ CREATE TABLE `product` (
   KEY `product_FK_1` (`SUBCATEGORY_ID`),
   CONSTRAINT `product_FK` FOREIGN KEY (`CATEGORY_ID`) REFERENCES `categories` (`ID`),
   CONSTRAINT `product_FK_1` FOREIGN KEY (`SUBCATEGORY_ID`) REFERENCES `subcategories` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,7 +76,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'TaTeTi Selva','150','TaTeTi suerte para Mi','Tateti.gif',1,2,1,10,'2021-12-06 00:00:00',NULL,NULL),(2,'Memotest Graja','180','Recuerda y venceras','c40f40ee97c6678e7f426a5c8895c1b1.jpg',1,4,1,NULL,'2021-12-06 00:00:00',NULL,NULL),(3,'Escribiendo Números Mar','250','Aprendiendo a escribir números','descarga.jfif',3,3,1,15,'2021-12-06 00:00:00',NULL,NULL),(4,'Leo y Escribo Bosque','370','Leo y Escribo jojojo','LEO-Y-ESCRIBO-PORTADA.jpg',2,1,0,NULL,'2021-12-06 00:00:00',NULL,NULL),(5,'A seguir la linea! Mar','450','Vamos a seguir la linea!!','13728529_1062315260528054_456195555_o.jfif',3,3,1,NULL,'2021-12-06 00:00:00',NULL,NULL);
+INSERT INTO `product` VALUES (2,'Memotest Graja','180','Recuerda y venceras','c40f40ee97c6678e7f426a5c8895c1b1.jpg',1,4,1,NULL,'2021-12-06 00:00:01',NULL,NULL),(3,'Escribiendo Números Mar','250','Aprendiendo a escribir números','descarga.jfif',3,3,1,NULL,'2021-12-06 00:00:01',NULL,NULL),(4,'Leo y Escribo Bosque','370','Leo y Escribo jojojo','LEO-Y-ESCRIBO-PORTADA.jpg',2,1,0,10,'2021-12-06 00:00:01',NULL,NULL),(5,'A seguir la linea! Mar','450','Vamos a seguir la linea!!','13728529_1062315260528054_456195555_o.jfif',3,3,1,NULL,'2021-12-06 00:00:01',NULL,NULL),(6,'Cartas','200','Grandes cartas de truco para disfrutar en familia y con amigos ambientadas en la selva para que su hijo al jugar aprenda sobre animales.','product-1639451258373.png',1,2,0,10,'0000-00-00 00:00:00',NULL,NULL),(7,'Cubo rubik','1000','Gran juguete para aprender a resolver.','product-1639451436205.png',1,1,0,10,'0000-00-00 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -147,14 +147,14 @@ CREATE TABLE `users` (
   `NAME` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `USERNAME` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `EMAIL` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
-  `PASSWORD` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `PASSWORD` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `AVATAR` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `IS_ADMIN` tinyint(1) DEFAULT 0,
   `CREATED_AT` datetime NOT NULL,
   `MODIFIED_AT` datetime DEFAULT NULL,
   `DELETED_AT` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,7 +163,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (6,'Matias','Dopazo','Mati@dopazo.com','$2a$10$BspeySPDaLnWiDlE4LV49.nxqQVnX2HDHBAIrujmjEY','users-1638929216797.png',1,'0000-00-00 00:00:00',NULL,NULL),(7,'Bautista','Iorfi','bauti@iorfi.com','$2a$10$2GcUQ/gUdzIsYCUJLn0jT.ICIodS.Vd65d.IeLskgJz','users-1638929247222.png',0,'0000-00-00 00:00:00',NULL,NULL),(8,'Juan','Tuso','juan@tuso.com','$2a$10$I0fmARiEUxykGUfaPPBqieATeSHXwiKfLG4BBz/4L6E','users-1638929272295.png',0,'0000-00-00 00:00:00',NULL,NULL),(9,'prueba','prueba','prueba@prueba.com','$2a$10$TDmw31o0ppJ.Hcz2ZekUPe8cvmn/jqjY4wzKXHQZmJW','users-1638929335183.png',0,'0000-00-00 00:00:00',NULL,NULL),(10,'jose','jose perez','jose@perez.com','','users-1639096703668.png',0,'0000-00-00 00:00:00',NULL,NULL),(11,'Matias','Perez','dopa@dopa.com','$2a$10$GAPkZnkSfF13ZF1TKaebnuVR./IO/vgpo11f0sp3EWl','users-1639422443408.png',0,'0000-00-00 00:00:00',NULL,NULL),(12,'Matias','Perezzz','mail@mail.com','$2a$10$44D6WRbVIPB4Tk12y117zOSsWY4YAGrfs99A/grtjly','users-1639425235813.png',0,'0000-00-00 00:00:00',NULL,NULL);
+INSERT INTO `users` VALUES (6,'Matias','Dopazo','Mati@dopazo.com','$2a$10$BspeySPDaLnWiDlE4LV49.nxqQVnX2HDHBAIrujmjEY','users-1638929216797.png',1,'2021-10-20 10:10:01',NULL,NULL),(7,'Bautista','Iorfi','bauti@iorfi.com','$2a$10$2GcUQ/gUdzIsYCUJLn0jT.ICIodS.Vd65d.IeLskgJz','users-1638929247222.png',0,'2021-10-20 10:10:01',NULL,NULL),(8,'Juan','Tuso','juan@tuso.com','$2a$10$I0fmARiEUxykGUfaPPBqieATeSHXwiKfLG4BBz/4L6E','users-1638929272295.png',0,'2021-10-20 10:10:01',NULL,NULL),(9,'prueba','prueba','prueba@prueba.com','$2a$10$TDmw31o0ppJ.Hcz2ZekUPe8cvmn/jqjY4wzKXHQZmJW','users-1638929335183.png',0,'2021-10-20 10:10:01',NULL,NULL),(10,'jose','jose perez','jose@perez.com','gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg','users-1639096703668.png',0,'2021-10-20 10:10:01',NULL,NULL),(11,'Matias','Perez','dopa@dopa.com','$2a$10$GAPkZnkSfF13ZF1TKaebnuVR./IO/vgpo11f0sp3EWl','users-1639422443408.png',0,'2021-10-20 10:10:01',NULL,NULL),(12,'Matias','Perezzz','mail@mail.com','$2a$10$44D6WRbVIPB4Tk12y117zOSsWY4YAGrfs99A/grtjly','users-1639425235813.png',0,'2021-10-20 10:10:01',NULL,NULL),(13,'matias','Dopazo','mati.dopazo@gmail.com','$2a$10$oerE7/U.Tu5Hn.6QnheJPuKnJwwY2YppDFI6eEHnVcyI92usR59U2','users-1639450860998.png',0,'0000-00-00 00:00:00',NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-13 21:18:19
+-- Dump completed on 2021-12-14  0:25:29

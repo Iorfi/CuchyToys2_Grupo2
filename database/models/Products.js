@@ -24,6 +24,9 @@ module.exports = (sequelize, dataTypes) => {
         CATEGORY_ID: {
             type: dataTypes.INTEGER
         },
+        SUBCATEGORY_ID: {
+            type: dataTypes.INTEGER
+        },
         DESTACADO: {
             type: dataTypes.BOOLEAN
         },

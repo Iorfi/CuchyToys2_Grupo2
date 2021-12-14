@@ -8,48 +8,44 @@
     <%- include ("../partials/header.ejs") %>
 
     <main class = "formularioEdicion">
-        <form action="/admin/formularioEdicion/<%-id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form action="/admin/formularioEdicion/<%-producto.ID %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <h1 >¡Edita tu producto!</h1><!--contenedor del titulo-->
     
                 <div class="lineaHorizontal"></div>
 
-                <h2 class="titulos" for="nombreP">Estas editando:<%-products[id-1].name %></h2>
+                <h2 class="titulos" for="nombreP">Estas editando:<%-producto.NAME %></h2>
                     
     
                     <div class="lineaHorizontal"></div>
         
                     <label class="titulos"  for="name">Nuevo nombre: </label>
-                    <input type="text" id="fileImagen" name="name" value="<%-products[id-1].name %>">
+                    <input type="text" id="fileImagen" name="name" value="<%-producto.NAME %>">
 
                     <div class="lineaHorizontal"></div>
 
                     <label class="titulos" for="category">¿En que categoría se encuentra tu producto?</label>
                     <div class="contFormA">
-                        <label for= "category"> Juego</label>
-                        <input type="radio" id="category" value= "Juego"name="category">
-                        <label for= "category"> Animales</label>
-                        <input type="radio" id="category" value= "Animales"name="category">
+                        <label for= "category"> Juegos de mesa</label>
+                        <input type="radio" id="category" value= "1"name="category">
+                        <label for= "category"> Aprendiendo a Escribir</label>
+                        <input type="radio" id="category" value= "2"name="category">
+                        <label for= "category"> Grafomotricidad</label>
+                        <input type="radio" id="category" value= "3"name="category">
     
                     </div>
     
                     <div class="lineaHorizontal"></div>
                   
                     <label class="titulos" for="subcategory">¿En que subcategoría se encuentra tu producto?</label>
-                    <div class="contFormA">
-                        <label for= "subcategory"> Juegos de mesa</label>
-                        <input type="radio" id="subcategory" value= "Juegos de mesa"name="subcategory">
-                        <label for= "subcategory"> Aprendiendo a escribir</label>
-                        <input type="radio" id="subcategory" value= "Aprendiendo a escribir"name="subcategory">
-                        <label for= "subcategory"> Grafomotricidad</label>
-                        <input type="radio" id="subcategory" value= "Grafomotricidad"name="subcategory">
-                        <label for= "subcategory"> Bosque</label>
-                        <input type="radio" id="subcategory" value= "Bosque"name="subcategory">
-                        <label for= "subcategory"> Selva</label>
-                        <input type="radio" id="subcategory" value= "Selva"name="subcategory">
-                        <label for= "category"> Mar</label>
-                        <input type="radio" id="subcategory" value= "Mar"name="subcategory">
-                        <label for= "category"> Granja</label>
-                        <input type="radio" id="subcategory" value= "Granja"name="subcategory">
+                <div class="contFormA">
+                    <label for= "subcategory"> Bosque</label>
+                    <input type="radio" id="subcategory" value= "1"name="subcategory">
+                    <label for= "subcategory"> Selva</label>
+                    <input type="radio" id="subcategory" value= "2"name="subcategory">
+                    <label for= "category"> Mar</label>
+                    <input type="radio" id="subcategory" value= "3"name="subcategory">
+                    <label for= "category"> Granja</label>
+                    <input type="radio" id="subcategory" value= "4"name="subcategory">
                     </div>
                 <div class="lineaHorizontal"></div>
               
@@ -70,17 +66,17 @@
                 <div class="lineaHorizontal"></div>      
 
                     <label class="titulos"  for="price">Define el precio del producto</label>
-                    <input type="number" id="precio" name="price" value="<%-products[id-1].price %>" >
+                    <input type="number" id="precio" name="price" value="<%-producto.PRICE %>" >
 
                 <div class="lineaHorizontal"></div>
                                                           
                 <label class="titulos"  for="discount">¿Ofeces descuento?</label>
-                <input type="textarea" id="discount" name="discount"value="<%-products[id-1].discount %>" >
+                <input type="textarea" id="discount" name="discount"value="<%-producto.DISCOUNT %>" >
                 
                 <div class="lineaHorizontal"></div>
                                                     
                     <label class="titulos"  for="Email">¿Querés agregar una descripción?</label>
-                    <input class="desc" type="textarea" name="descripcion" value="<%-products[id-1].description %>" >  
+                    <input class="desc" type="textarea" name="descripcion" value="<%-producto.DESCRIPTION %>" >  
 
                     <button class="publicar" type="submit" >editar</button> 
         </form>

@@ -5,19 +5,20 @@ const mainController = {
     
     home: (req,res) => {
         let porductosAMostrar =[]
-        console.log(req.params.of)
-        if(req.params.cat != undefined){
-        db.Products.findAll({where:{DESTACADO: 1}})
+        if(req.params.of != undefined){
+        db.Products.findAll({where:{DISCOUNT: 10}})
         .then(function(products){
             let porductosAMostrar = products
             return res.render('home',{products: porductosAMostrar})
-        })}
+        }) 
+
+        }
         else{
-            db.Products.findAll({where:{DISCOUNT: 10}})
+            db.Products.findAll({where:{DESTACADO: 1}})
             .then(function(products){
                 let porductosAMostrar = products
                 return res.render('home',{products: porductosAMostrar})
-            }) 
+            })
         }
     }
     

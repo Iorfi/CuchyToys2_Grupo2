@@ -16,8 +16,6 @@ const usersController ={
     registro: (req,res)=>{res.render('users/registro')},
 
     registerProcess: (req,res)=>{ 
-       const contra = bcryptjs.hashSync(req.body.password, 10)
-       console.log(contra)
         db.Users.findOne(
             {
                 where:
@@ -93,8 +91,6 @@ const usersController ={
         db.Users.findOne({where:{email:req.body.email}
         })
         .then(function(usuario){ if (usuario!=null){
-            console.log(req.body.password)
-            console.log(usuario.PASSWORD)
                 let isOkThePassword = bcryptjs.compareSync(req.body.password, usuario.PASSWORD)
                 if(isOkThePassword){
                     req.session.userLogged = usuario
@@ -127,6 +123,7 @@ const usersController ={
     
     preguntasFrecuentes: (req,res)=>{res.render('users/preguntasFrecuentes')}, 
     perfil: (req,res)=>{
+        console.log(req.session.userLogged)
         res.render('users/perfil', {user: req.session.userLogged} )
     }
 }

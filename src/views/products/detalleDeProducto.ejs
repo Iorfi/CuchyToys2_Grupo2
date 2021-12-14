@@ -11,14 +11,14 @@
     <main class="detalleDeProducto">
 
         <div class="categoria">
-            <a href="/">inicio</a> > <a href="">sub categoria</a> > <a href=""> sub categoriax2</a> 
+            <a href="/">inicio</a> > <a href="">categoria</a> > <a href=""> subcategoria</a> 
         </div>
         <div class="cotenedorMain">
-                <img class="imagenProducto" src="/images/products/<%-products[idProducto -1].image %>" >
+                <img class="imagenProducto" src="/images/products/<%-products.IMAGE %>" >
             <div class="info">
-             <h1> <%- products[idProducto -1].name %></h1> 
+             <h1> <%- products.NAME %></h1> 
 
-        <div class="precio"> $ <%-products[idProducto -1].price %> </div>
+        <div class="precio"> $ <%-products.PRICE %> </div>
 
         <div class="contenedorCarritoYboton">
         <div class="sumarCarrito"> 
@@ -53,11 +53,11 @@
                 <div class="direccion1"> Av. Rivadavia 5952</div>
             </div>
         
-                <div class="detalleProducto"> Descripcion del producto: <br>  <br> <%-products[idProducto -1].description%> </div>  
+                <div class="detalleProducto"> Descripcion del producto: <br>  <br> <%-products.DESCRIPTION%> </div>  
 
                 <div class="botones"> 
-                    <a href="../../admin/formularioEdicion/<%= products[idProducto -1].id %>" class="botonesA"> EDITAR </a>
-                    <form class="botonesB" action= "/products/detalleDeProducto/<%= products[idProducto -1].id %>?_method=DELETE" method = "POST"> 
+                    <a href="/admin/formularioEdicion/<%= products.ID %>" class="botonesA"> EDITAR </a>
+                    <form class="botonesB" action= "/products/detalleDeProducto/<%= products.ID %>?_method=DELETE" method = "POST"> 
                         <button type="submit">Eliminar</button>
                      </form>
                 </div>

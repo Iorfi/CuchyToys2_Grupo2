@@ -14,27 +14,27 @@ const adminController ={
 
             Promise.all ([pedidoProducto, pedidoCategories, pedidoSubCategories]) 
                 .then (function ([producto, category, subcategory]) {
-                    res.render("admin/formularioEdicion", {producto:producto, category:category, subcategory:subcategory})
+                    return res.render("admin/formularioEdicion", {producto:producto, category:category, subcategory:subcategory})
                 })
         },
 
         update: (req,res)=>{
-            db.Products.create({
+            db.Products.update({
 
-                name: req.body.name ,
-                price: req.body.price ,
-                description: req.body.description ,
-                image: req.body.product-image ,
-                category_id: req.body.category,
-                subcategory_id: req.body.subcategory,
-                destacado: req.body.destacado,
-                discount: req.body.discount,
+                NAME: req.body.name ,
+                PRICE: req.body.price ,
+                DESCRIPTION: req.body.description ,
+                IMAGE: req.file.filename ,
+                CATEGORY_ID: req.body.category,
+                SUBCATEGORY_ID: req.body.subcategory,
+                DESTACADO: req.body.destacado,
+                DISCOUNT: req.body.discount,
                 }, {
                     where: {
-                        id: req.params.id
+                        ID: req.params.id
                      }
                     })
-            res.redirect("/producto/" + req.params.id)
+            return res.redirect("/products/detalleDeProducto/" + req.params.id)
         }, 
     
         // Create - Form to create
@@ -44,27 +44,19 @@ const adminController ={
 
         // Create -  Method to store
 
-        generateId: function () {
-            let allUsers = this.findAll(); 
-            let lastUser = allUsers.pop();
-            if (lastUser) {
-            return lastUser.id + 1;
-            }
-            return 1;
-            },
 
         store: (req, res) => {
         db.Products.create({
-
-            name: req.body.name ,
-            price: req.body.price ,
-            description: req.body.description ,
-            image: req.body.product-image ,
-            category_id: req.body.category,
-            subcategory_id: req.body.subcategory,
-            destacado: req.body.destacado,
-            discount: req.body.discount,
+            NAME: req.body.name ,
+            PRICE: req.body.price ,
+            DESCRIPTION: req.body.description ,
+            IMAGE: req.file.filename ,
+            CATEGORY_ID: req.body.category,
+            SUBCATEGORY_ID: req.body.subcategory,
+            DESTACADO: req.body.destacado,
+            DISCOUNT: req.body.discount,
         })
+        return res.redirect("/products/categoriasDeJuguetes")
     }
 
 }
