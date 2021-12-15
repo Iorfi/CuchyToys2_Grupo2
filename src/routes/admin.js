@@ -21,8 +21,8 @@ const upload = multer({ storage });
 
 const { body } = require("express-validator")
 const validations = [
-    body("name").notEmpty().withMessage("el nombre debe terner al menos 5 caracteres y no puede estar vacio").isLength({min:5}), 
-    body("description").notEmpty().withMessage("Debe tener al menos 20 caracteres").isLength({min:20}),
+    body("name").notEmpty().withMessage("el nombre no puede estar vacio").isLength({min:5}).withMessage("el nombre debe terner al menos 5 caracteres"), 
+    body("description").notEmpty().withMessage("la descripcion no puede estar vacia").isLength({min:20}).withMessage("Debe tener al menos 20 caracteres"),
     body("image").custom ((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = [".jpg",".jpeg" ,".png", ".gif"]

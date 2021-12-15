@@ -44,7 +44,9 @@ const adminController ={
                     })
                 return res.redirect("/products/detalleDeProducto/" + req.params.id) 
                 })
-                        
+                .catch(function(error){console.log(error)}
+
+                )          
  
            
         }, 
@@ -59,10 +61,12 @@ const adminController ={
 
         store: (req, res) => {
             const resultValidation = validationResult(req);
+            console.log(resultValidation.mapped())
             if (resultValidation.errors.length > 0) {
                 return res.render ("admin/formularioCarga", {errors: resultValidation.mapped(),oldData: req.body})
-            }   
-        db.Products.create({
+            }
+            else{
+                db.Products.create({
             NAME: req.body.name ,
             PRICE: req.body.price ,
             DESCRIPTION: req.body.description ,
@@ -73,6 +77,8 @@ const adminController ={
             DISCOUNT: req.body.discount,
         })
         return res.redirect("/products/categoriasDeJuguetes")
+            }   
+        
     }
 
 }

@@ -13,9 +13,11 @@
         <h1 > Hola de nuevo, <%=user.NAME %></h1>
         <p><%=user.EMAIL%></p>
     </div>
+    <% if (admin){ %>
     <form class = perfilContMainAB>
       <button class = "botonEditarUsuarioA"> <a href="/admin/formularioCarga">Crear Producto</a> </button>
   </form>
+  <%   }    %>
   <form class = perfilContMainAC>
     <button class = "botonEditarUsuarioB"> <a href="/users/editUser">editar usuario</a> </button>
 </form>

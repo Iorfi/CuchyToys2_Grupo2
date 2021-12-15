@@ -86,10 +86,10 @@
                 <div class="lineaHorizontal"></div>
                                                     
                     <label class="titulos"  for="Email">¿Querés agregar una descripción?</label>
-                    <input class="desc" type="textarea" name="descripcion" value="<%-producto.DESCRIPTION %>" >  
-                    <% if (locals.errors && errors.descripcion) { %>
+                    <input class="desc" type="textarea" name="description" value="<%-producto.DESCRIPTION %>" >  
+                    <% if (locals.errors && errors.description) { %>
                         <div class="text-danger"> 
-                            <%= errors.descripcion.msg %>
+                            <%= errors.description.msg %>
                         </div>
                         <% } %>
                     <button class="publicar" type="submit" >editar</button> 

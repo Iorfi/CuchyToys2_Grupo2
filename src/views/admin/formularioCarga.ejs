@@ -82,6 +82,11 @@
                                                     
                     <label class="titulos"  for="description">¿Querés agregar una descripción?</label>
                     <input class="desc" type="textarea" id= "description" name="description" >
+                    <% if (locals.errors && errors.description) { %>
+                        <div class="text-danger"> 
+                            <%= errors.description.msg %>
+                        </div>
+                        <% } %>
 
                     <button class="publicar" type="submit" >Publicar</button> 
         </form>

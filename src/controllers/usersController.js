@@ -131,7 +131,7 @@ const usersController ={
     
     preguntasFrecuentes: (req,res)=>{res.render('users/preguntasFrecuentes')}, 
     perfil: (req,res)=>{
-        res.render('users/perfil', {user: req.session.userLogged} )
+        res.render('users/perfil', {user: req.session.userLogged,admin:res.locals.admin} )
     },
     editUser: (req,res)=>{
         res.render('users/editUser')
