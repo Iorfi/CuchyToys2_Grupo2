@@ -55,15 +55,14 @@
         
                 <div class="detalleProducto"> Descripcion del producto: <br>  <br> <%-products.DESCRIPTION%> </div>  
                 <% if (admin){ %>
-                <div class="botones"> 
-                    <form class = perfilContMainAC>
+                    <div class="botones">
+                    <form >
                         <button class = "botonEditarUsuarioB edit"> <a href="/admin/formularioEdicion/<%= products.ID %>"> EDITAR </a> </button>
                     </form>
-                    <form class = perfilContMainAC action= "/products/detalleDeProducto/<%= products.ID %>?_method=DELETE" method = "POST">
+                    <form  class = perfilContMainAC action= "/products/detalleDeProducto/<%= products.ID %>?_method=DELETE" method = "POST">
                         <button class = "botonEditarUsuarioC"  type="submit"><a href=""> ELIMINAR </a> </button>
                     </form>
-                    
-                </div>
+                 </div>
                 <%   }    %>
                 
             </div>

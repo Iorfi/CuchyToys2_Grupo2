@@ -1693,6 +1693,9 @@ background-color: #e2b399;
     .detalleDeProducto .botonEditarUsuarioC a{
         color: red;
     }
+    .detalleDeProducto .detalleProducto {
+        margin-right: 100px;
+    }
 
 
     /*------------------------------------- Formulario de Contacto -------------------------------------------------*/
